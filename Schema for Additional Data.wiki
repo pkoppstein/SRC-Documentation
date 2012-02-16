@@ -2,7 +2,7 @@
 
 In whichever directory there is a nomrecord.txt file, the following additional files are defined:
 
-* nomrecord2.tsv - one line of data giving supplementary information about entries in the corresponding nomrecord.txt file.
+* [[Schema%20for%20Additional%20Data#File: nomrecord2.tsv|nomrecord2.tsv]] - one line of data giving supplementary information about entries in the corresponding nomrecord.txt file.
 * legislator.tsv - additional information about legislators
 * voteview.tsv   - information about votes, similar to that provided at voteview.com
 
@@ -35,7 +35,7 @@ data files, the header line is just one line.
 STATE,CHAMBER,SESSION,YEAR1,NVOTES1,ISCHRONOLOGICAL1,YEAR2,NVOTES2,ISCHRONOLOGICAL2,COMMENT
 
 ==== Example: ====
-TN,U,reg,2003,77,?,2003
+{{{TN,U,reg,2003,77,?,2003}}}
 
 This file will contain just one data record.  All fields except the last three are required, but NVOTES2 and ISCHRONOLOGICAL2 must be provided if YEAR1 differs from YEAR2.
 
@@ -65,7 +65,7 @@ VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
 Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
 
 ==== Example: ====
-097,Clemens,Samuel,L.,Twain,,1835,M,
+{{{097,Clemens,Samuel,L.,Twain,,1835,M,}}}
 
 Except possibly in the VARIANTS field, all components of a person's name should be given using the normal conventions regarding upper and lower case, e.g. John A. Smith, III.
 
@@ -107,7 +107,7 @@ SEQUENCE,DAYCOUNT,date,session,number,bill,question,result,description,yeatotal,
   vote_id
 
 ==== Example: ====
-23,2003-02-06,reg,,Senate Bill No. 24,,passed,,25,0
+{{{23,2003-02-06,reg,,Senate Bill No. 24,,passed,,25,0}}}
 
 SEQUENCE is required and corresponds to the column number in the voting vector
 given in the corresponding nomrecord.txt file.
