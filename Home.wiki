@@ -1,6 +1,9 @@
 == Welcome ==
 
-Welcome to your wiki! This is the default page we've installed for your convenience. Go ahead and edit it.
+Welcome to the "states50" State Rollcall Project.  This webpage is under construction.
+
+== Documentation ==
+* [[Schema%20for%20Additional%20Data|Schema for Additional Data]]
 
 === Wiki features ===
 
@@ -8,7 +11,7 @@ This wiki uses the [[http://www.wikicreole.org/|Creole]] syntax, and is fully co
 
 The wiki itself is actually a mercurial repository, which means you can clone it, edit it locally/offline, add images or any other file type, and push it back to us. It will be live immediately.
 
-Go ahead and try:
+To clone the wiki repository:
 
 {{{
 $ hg clone https://bitbucket.org/states50/nominate/wiki
@@ -20,16 +23,4 @@ Wiki pages are normal files, with the .wiki extension. You can edit them locally
 
 You can also highlight snippets of text, we use the excellent [[http://www.pygments.org/|Pygments]] library.
 
-Here's an example of some Python code:
-
-{{{
-#!python
-
-def wiki_rocks(text):
-    formatter = lambda t: "funky"+t
-    return formatter(text)
-}}}
-
-You can check out the source of this page to see how that's done, and make sure to bookmark [[http://pygments.org/docs/lexers/|the vast library of Pygment lexers]], we accept the 'short name' or the 'mimetype' of anything in there.
-
-Have fun!
+See also [[http://pygments.org/docs/lexers/|the vast library of Pygment lexers]]. The 'short name' or the 'mimetype' of anything in there can be used here.
