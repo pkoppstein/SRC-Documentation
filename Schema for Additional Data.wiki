@@ -65,7 +65,7 @@ VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
 Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
 
 ==== Example: ====
-{{{097,Clemens,Samuel,L.,Twain,,1835,M,}}}
+{{{097,Clemens,Samuel,L.,Twain,,Mark Twain|Mark (Samuel Langhorne Clemens) Twain,1835,M,}}}
 
 Except possibly in the VARIANTS field, all components of a person's name should be given using the normal conventions regarding upper and lower case, e.g. John A. Smith, III.
 
