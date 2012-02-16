@@ -2,9 +2,9 @@
 
 In whichever directory there is a nomrecord.txt file, the following additional files are defined:
 
-* [[Schema%20for%20Additional%20Data#File: nomrecord2.tsv|nomrecord2.tsv]] - one line of data giving supplementary information about entries in the corresponding nomrecord.txt file.
-* legislator.tsv - additional information about legislators
-* voteview.tsv   - information about votes, similar to that provided at voteview.com
+* [[Schema%20for%20Additional%20Data#!file-nomrecord2tsv|nomrecord2.tsv]] - one line of data giving supplementary information about entries in the corresponding nomrecord.txt file.
+* [[Schema%20for%20Additional%20Data#!file-legislatortsv|legislator.tsv]] - additional information about legislators
+* [[Schema%20for%20Additional%20Data#!file-voteviewtsv|voteview.tsv]]   - information about votes, similar to that provided at voteview.com
 
 These additional files should be in "tab-separated value" format (suffix .tsv),
 with a header row.  In this document, however, the examples will use
