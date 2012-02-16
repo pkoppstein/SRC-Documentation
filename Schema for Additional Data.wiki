@@ -1,0 +1,144 @@
+== Schema for supplementary files in the "nominate" repository. ==
+
+In whichever directory there is a nomrecord.txt file, the following additional files are defined:
+
+* nomrecord2.tsv - one line of data giving supplementary information about entries in the corresponding nomrecord.txt file.
+* legislator.tsv - additional information about legislators
+* voteview.tsv   - information about votes, similar to that provided at voteview.com
+
+These additional files should be in "tab-separated value" format (suffix .tsv),
+with a header row.  In this document, however, the examples will use
+"," as the field delimiter.
+
+The "pipe" character ("|") is used in two ways:
+* in this document, it signifies a choice, e.g. reg|ss|ss1 means one of the three indicated options.
+* in certain fields, it serves as a separator between multiple values.
+
+Required fields are marked with an asterisk (*).
+
+Records in a .tsv file need not have trailing tabs.
+
+Unless otherwise stated, in this document indexing starts at 1.
+
+Within a field, leading and trailing whitespace is never significant but should be avoided.
+
+CONTROLLED signifies that the values in a field should be selected from the
+controlled vocabulary for that field.  See the Codebook.
+
+In this document, the "Header" line may be spread over more than one line, but in the
+data files, the header line is just one line.
+
+
+== File: nomrecord2.tsv ==
+
+==== Header: ====
+STATE,CHAMBER,SESSION,YEAR1,NVOTES1,ISCHRONOLOGICAL1,YEAR2,NVOTES2,ISCHRONOLOGICAL2,COMMENT
+
+==== Example: ====
+TN,U,reg,2003,77,?,2003
+
+This file will contain just one data record.  All fields except the last three are required, but NVOTES2 and ISCHRONOLOGICAL2 must be provided if YEAR1 differs from YEAR2.
+
+* *STATE:   two-letter upper-case abbreviation (CONTROLLED)
+* *CHAMBER: L|U (L for lower house, U for upper house)
+* *SESSION: reg|ss|ss1|ss2|org (following current practice) (CONTROLLED)
+* *YEAR1:   the first year (format: YYYY)
+* *NVOTES1: number of votes in the vote vector in that year
+* *ISCHRONOLOGICAL1: are the votes in the vote vector for YEAR1 in chronological order? 
+{{{
+         Y means strictly chronological;
+         D means chronological at least by day;
+         ? means unknown or TBD;
+         N means known not to be chronological (globally or by day)
+}}}
+        
+* *YEAR2:   the second year (format: YYYY) if different from YEAR1, otherwise YEAR1
+*  NVOTES2: blank if YEAR1=YEAR2, otherwise as for NVOTES1 but for YEAR2 
+*  ISCHRONOLOGICAL2: blank if YEAR1=YEAR2, otherwise as for ISCHRONOLOGICAL1 but for YEAR2
+*  COMMENT: an informative string, e.g. about the quality of the corresponding data.
+
+
+== File: legislator.tsv ==
+==== Header: ====
+LOCALID,SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,
+VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
+Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
+
+==== Example: ====
+097,Clemens,Samuel,L.,Twain,,1835,M,
+
+Except possibly in the VARIANTS field, all components of a person's name should be given using the normal conventions regarding upper and lower case, e.g. John A. Smith, III.
+
+In the FIRSTNAME and MIDDLENAMES fields, periods for initials should be used, e.g. "L.".
+
+In the following, "+" signifies that at least one of BIRTHYEAR or full FIRSTNAME should be given.
+
+* * LOCALID   - the id (normally three digits including leading 0s) in the first field in nomrecord.txt
+* * SURNAME   - normally as listed in the vote record 
+* + FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
+*  MIDDLENAMES - preferably all middle names, or at least initials
+*  ALTERNATIVESURNAMES - multiple alternatives should be separated by | (e.g. "Smith|Jones")
+*  SUFFIX     - Jr|Sr|II|III|...
+*  VARIANTS   - pipe-delimited variants of the full name that cannot be directly inferred from the other name fields (see below).
+* + BIRTHYEAR  - YYYY
+*  GENDER     - M|F
+*  GLOBALID   - the global id for this project
+*  Votesmart  - id
+*  OpenStates - id
+*  CSMSP      - id
+*  COMMENT
+
+Note on VARIANTS:  
+
+The VARIANTS field for "Chih-Long Lin" might be: C.-L. Lin|Chih-long Lin|LIN Qilong
+
+For nicknames, the form(s) used in official records can be used, e.g. "Buzz (Tim) Lightyear".
+
+           Standard variants based on the other naming fields should not be included.
+
+[Detailed examples omitted here]
+
+== File: voteview.tsv ==
+
+==== Header: ====
+SEQUENCE,DAYCOUNT,date,session,number,bill,question,result,description,yeatotal,naytotal,
+  membertotal,
+  type,
+  vote_id
+
+==== Example: ====
+23,2003-02-06,reg,,Senate Bill No. 24,,passed,,25,0
+
+SEQUENCE is required and corresponds to the column number in the voting vector
+given in the corresponding nomrecord.txt file.
+
+The fields from "date" to "naytotal" are defined as at voteview.com
+(see e.g. http://voteview.com/house111.htm)
+
+To ensure traceability, given the context (state and house) and the values of date and session, the information in the {DAYCOUNT, number, bill, question} fields should be sufficient to identify the rollcall in the official records unambiguously.
+
+Ideally:
+  * there should be a one-to-one correspondence between the data records
+    in the votes file and the voting vector in the nomrecord.txt file.
+  * ignoring the header row, the n-th row of data in voteview.tsv file
+    should correspond to the n-th vote in the corresponding vector of
+    votes.
+
+Here is a more detailed description:
+
+* * SEQUENCE:     column number (counting from 1) in the voting vector
+*  DAYCOUNT:     an integer reflecting the relative ordering of rollcalls on the given date
+* * date:         format YYYY-MM-DD
+* * session:      reg|ss|ss1|ss2|org (CONTROLLED)
+*  number:       the number or id for the vote as given in the record
+*  bill:         e.g. "H R 2997" (a short identifier as given in the official records)
+*  question:     e.g. "Bradford" (generally, an initial segment of a longer identifier as given in the official records)
+* * result:       e.g. Failed | Passed
+*  description:  a string from the official records
+* * yeatotal:     decimal count
+* * naytotal:     decimal count
+*  membertotal:  decimal count of the number of legislators eligible to vote if known (excludes non-members): 
+                CONSTRAINT: yeatotal + naytotal <= membertotal 
+*  type:          first reading | veto override | committee vote | ... 
+                    [loosely controlled vocab, by state]
+*  vote_id:     Open States Vote ID
