@@ -107,7 +107,7 @@ SEQUENCE,DAYCOUNT,date,session,number,bill,question,result,description,yeatotal,
   vote_id
 
 ==== Example: ====
-{{{23,2003-02-06,reg,,Senate Bill No. 24,,passed,,25,0}}}
+{{{23,1,2003-02-06,reg,,Senate Bill No. 24,,passed,,25,0}}}
 
 SEQUENCE is required and corresponds to the column number in the voting vector
 given in the corresponding nomrecord.txt file.
