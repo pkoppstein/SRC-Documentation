@@ -1,0 +1,68 @@
+==Sequential Tag-Value Format ==
+
+This format is intended for capturing certain data that might appear in
+the proceedings of a legislative body.
+
+1. The order of lines in the file is important.
+
+2. Each line takes the form:
+
+Tag: value
+
+3. If "Tag" is blank, it is understood to be "Member", where "Member" is the identifier as it appears in that particular rollcall (e.g. "Smith"), or as a disambiguation of that identifier used in a different rollcall (e.g. "Smith (43)").
+
+4. For certain tags, the value must be blank.
+
+5. The set of tags is predefined.  
+
+6. Unless otherwise specified, the field names defined for the three standard .tsv files (see [[Schema%20for%20Additional%20Data|Schema for Additional Data]]) can be used.
+
+===ROUGH EXAMPLE===
+
+# This example is intended to be illustrative rather than precise.
+# "#" indicates that the remainder of the line is a comment.
+
+{{{
+STATE: AL
+CHAMBER: U
+SESSION: reg
+Roster:         # a section header
+District: 1
+: Jones, A.
+District: 2
+: Wiggins
+
+Rollcall:        # a section header
+date: 2009-01-07
+question: Shall the bill pass?
+bill: HR 2024
+AYES: 3
+Party: Republican
+: Jones, A.
+: Smith
+Party: Democrat
+: Wiggins
+
+NAYS: 2
+Party: Republican
+: Jones, B.
+Party: Democrat
+: Jones, C.
+
+PAIRED: 4 # number of individuals casting paired votes, not the number of pairs
+PAIR:
+AYE: present
+: Patrick, P.
+NAY: absent
+: Quigley
+PAIR:
+AYE: absent
+: Roberts
+NAY: present
+: Samuels
+
+result: Passed
+
+Event:   # a section header
+Add: D. Smith   # This implies that the previous Smith was not "D. Smith"
+}}}
