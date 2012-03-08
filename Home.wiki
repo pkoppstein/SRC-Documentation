@@ -5,6 +5,9 @@ Welcome to the "states50" State Rollcall Project.  This webpage is under constru
 == Documentation ==
 * [[Schema%20for%20Additional%20Data|Schema for Additional Data]]
 
+Early drafts:
+* [[Sequential Tag-Value Format]]
+
 === Wiki features ===
 
 This wiki uses the [[http://www.wikicreole.org/|Creole]] syntax, and is fully compatible with the 1.0 specification.
