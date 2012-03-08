@@ -32,16 +32,29 @@ data files, the header line is just one line.
 == File: nomrecord2.tsv ==
 
 ==== Header: ====
-STATE,CHAMBER,SESSION,YEAR1,NVOTES1,ISCHRONOLOGICAL1,YEAR2,NVOTES2,ISCHRONOLOGICAL2,COMMENT
+STATE,CHAMBER,SESSION,CODES,YEAR1,NVOTES1,ISCHRONOLOGICAL1,YEAR2,NVOTES2,ISCHRONOLOGICAL2,COMMENT
 
-==== Example: ====
-{{{TN,U,reg,2003,77,?,2003}}}
+==== Examples: ====
+{{{TN,U,reg,169,2003,77,?,2003}}}
 
-This file will contain just one data record.  All fields except the last three are required, but NVOTES2 and ISCHRONOLOGICAL2 must be provided if YEAR1 differs from YEAR2.
+{{{TN,U,reg,01234569,2003,77,?,2003}}}
+
+This file will contain just one data record.  All fields except the last four are required, but NVOTES2 and ISCHRONOLOGICAL2 must be provided if YEAR2 is specified and differs from YEAR1.
 
 * *STATE:   two-letter upper-case abbreviation (CONTROLLED)
 * *CHAMBER: L|U (L for lower house, U for upper house)
 * *SESSION: reg|ss|ss1|ss2|org (following current practice) (CONTROLLED)
+* *CODES:   codes used in voting vector, a selection in numerically increasing order from:
+** 0=not a member
+** 1=Yea
+** 2=Paired Yea
+** 3=Announced Yea
+** 4=Announced Nay
+** 5=Paired Nay
+** 6=Nay
+** 7=Present but uncertain (i.e. details are unresolved)
+** 9=Not Voting                   
+
 * *YEAR1:   the first year (format: YYYY)
 * *NVOTES1: number of votes in the vote vector in that year
 * *ISCHRONOLOGICAL1: are the votes in the vote vector for YEAR1 in chronological order? 
