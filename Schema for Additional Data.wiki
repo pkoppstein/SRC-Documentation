@@ -65,9 +65,9 @@ This file will contain just one data record.  All fields except the last four ar
          N means known not to be chronological (globally or by day)
 }}}
         
-* *YEAR2:   the second year (format: YYYY) if different from YEAR1, otherwise YEAR1
-*  NVOTES2: blank if YEAR1=YEAR2, otherwise as for NVOTES1 but for YEAR2 
-*  ISCHRONOLOGICAL2: blank if YEAR1=YEAR2, otherwise as for ISCHRONOLOGICAL1 but for YEAR2
+*  YEAR2:   the second year (format: YYYY) if different from YEAR1, otherwise empty or YEAR1
+*  NVOTES2: as for NVOTES1 but for YEAR2 
+*  ISCHRONOLOGICAL2: as for ISCHRONOLOGICAL1 but for YEAR2
 *  COMMENT: an informative string, e.g. about the quality of the corresponding data.
 
 
