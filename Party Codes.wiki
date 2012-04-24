@@ -15,6 +15,8 @@ Three-digit codes:
 920 YIM                 [Rhode Island]
 999 UNKNOWN
 }}}
-(*)To be determined.
+
+(*) "700" is a "catch-all" code for organizations that have not been assigned and are not likely to be assigned a three-digit code.
+
 
 If an additional code is needed, consult VoteView (http://voteview.com/party3.htm).
