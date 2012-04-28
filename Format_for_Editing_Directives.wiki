@@ -28,6 +28,8 @@ Here we focus on two scripts that are part of this repository:
 
 These two scripts support special editing directives, e.g. for deletion, adding an alias, declaring a specific name to be the canonical name, and so on.
 
+They also allow comment lines (lines beginning with #) and empty lines.
+
 The scripts are self-documenting via the --help option.
 
 ==Corrections.csv==
