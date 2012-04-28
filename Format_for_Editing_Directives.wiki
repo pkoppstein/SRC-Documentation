@@ -40,16 +40,14 @@ Here is a quick summary of the different directives that are supported, focusing
 In the following, a **distinguished name** is a name for which there is a unique LOCALID (ignoring "000 000" entries) at the time the directive is processed.
 
 * Standard - specify all three fields explicitly (using ",," if nol_number is empty)
-** e.g.: SPEAKER,,023
+** e.g. {{{SPEAKER,,023}}}
 * Split almost all CamelCase names
-** e.g.: ^,,^
+** e.g. {{{^,,^}}}
 * Guided split (see below)
-** e.g.: "UnusualSplit, Abc",,"Unusual^Split, A." 
+** e.g. {{{"UnusualSplit, Abc",,"Unusual^Split, A."}}}
 * Deletion
-** e.g. "RESENT: 000",021,DELETE
+** e.g. {{{RESENT: 000,021,DELETE}}}
 * Alias creation for an existing **distinguished name**: ALIAS,,DISTINGUISHED_NAME
-** e.g.: Smith J,,"Smith, John A."
+** e.g. {{{Smith J,,"Smith, John A."}}}
 
-
-
-The idea with 'guided splits" is that on the RHS, each of the parts should already be defined. In the example, "Unusual" and "Split, A." should already have entries in pty_nol.txt.
+The idea with "guided splits" is that on the RHS, each of the parts should already be defined. In the example, "Unusual" and "Split, A." should already have entries in pty_nol.txt.
