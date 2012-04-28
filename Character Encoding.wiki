@@ -1,10 +1,19 @@
 Files should be encoded using charset=iso-8859-1, also known as "latin1".
 
-This is a standard 8-bit code for Western languages.  The Windows-1252 codepage coincides with ISO-8859-1 for all codes except in the range 128 to 159 (hex 80 to 9F).
+This is a standard 8-bit code for Western languages and includes ASCII.  The Windows-1252 codepage coincides with ISO-8859-1 for all codes except in the range 128 to 159 (hex 80 to 9F).
 
 To avoid difficulties, do not use "smart quotes" in the NAME field of pty_nol.txt and nomrecord.txt files.  Accented characters (é etc) can be used.
 
 For further details, see for example [[http://en.wikipedia.org/wiki/ISO/IEC_8859-1|ISO/IEC_8859-1]].
 
 ==Checking and Conversion==
-On Linux or Mac, use "file -I FILENAME" to check the encoding of one or more files. The "iconv" command can be used to perform conversions.
+On Linux or Mac, use the file command to check the encoding of one or more files. The "iconv" command can be used to perform conversions.
+===Linux===
+{{{$ file -i pty_nol.txt
+pty_nol.txt: text/plain; charset=us-ascii
+}}}
+===Mac===
+{{{$ file -I pty_nol.txt
+pty_nol.txt: text/plain; charset=us-ascii
+}}}
+
