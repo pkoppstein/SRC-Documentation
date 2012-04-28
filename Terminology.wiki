@@ -7,7 +7,7 @@ Within the context of a pty_nol.txt file, the canonical name for a LOCALID exist
 The process of combining two or more [[Terminology#!voting-vector|voting vectors]] of a single legislator into a single voting vector. For example, the voting vector resulting from combining 191 and 969 is 161.
 
 ===nomrecord.txt file===
-A file containing details about the voting history of legislators.
+A file containing details about the voting history of legislators for a particular state and session.
 
 Each row contains the following fields:
 * LOCALID - three digit legislator id, unique within the context of this state and session.
@@ -44,7 +44,7 @@ A string of decimal digits reflecting the voting record of a single legislator:
 * 7 - unresolved (conflicting evidence)
 * 9 - no vote recorded
 
-Within a single nomrecord.txt file, the voting vectors should all be of the same length, and the results of a particular rollcall should all be represented at the same position.  
+Within a single [[Terminology#!nomrecordtxt-file|nomrecord.txt]] file, the voting vectors should all be of the same length, and the results of a particular rollcall should all be represented at the same position.  
 
 Usually, the voting vector is in chronological order, but that is currently not a requirement.
-
+ 
