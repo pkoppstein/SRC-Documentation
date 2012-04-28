@@ -4,7 +4,7 @@ A distinguished name for a legislator.  This name will be used when coalescing v
 Within the context of a pty_nol.txt file, the canonical name for a LOCALID exists if and only if there is a single NAME associated with that LOCALID, ignoring all entries in which both the PARTYID and DISTRICTID have been zeroed-out.  
 
 ===Coalescence===
-The process of combining two or more voting vectors of a single legislator into a single voting vector. For example, the voting vector resulting from combining 191 and 969 is 161.
+The process of combining two or more [[Terminology#!voting-vector|voting vectors]] of a single legislator into a single voting vector. For example, the voting vector resulting from combining 191 and 969 is 161.
 
 ===nomrecord.txt file===
 A file containing details about the voting history of legislators.
