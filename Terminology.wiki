@@ -3,13 +3,20 @@
 A file providing information about legislators for a particular state and session.  
 
 Apart from the first line, each line contains values for:
-* LOCALID - a three digit identifier for a legislator
+* LOCALID - a three-digit identifier for a legislator
 * NAME - a canonical name or alias for a legislator
 * PARTYID - a three-digit party code for the legislator
-* DISTRICTID - often a three-digit identifier
+* DISTRICTID - a character string (often a three-digit identifier)
 
-When such a file meets certain constraints, it is said to be **normalized**.  The main constraints are as follows:
+When such a file meets certain constraints, it is said to be **normalized**.  Apart from being properly formated, the main constraints are as follows:
 * there is exactly one **canonical name** per LOCALID
+* the PARTYID and DISTRICTID of all non-canonical names are both "000".
+* neither the PARTYID nor the DISTRICTID of a canonical are "000"
 
-===canonical name===
+===Canonical Name===
 A distinguished name for a legislator.  This name will be used when coalescing voting vectors.
+
+Within the context of a pty_nol.txt file, the canonical name for a LOCALID exists if and only if there is a single NAME associated with that LOCALID, ignoring all entries in which both the PARTYID and DISTRICTID have been zeroed-out.  
+
+
+
