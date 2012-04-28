@@ -10,6 +10,7 @@ Welcome to the "states50" State Rollcall Project.  This webpage is under constru
 Early drafts:
 * [[Sequential Tag-Value Format]]
 * [[Format for Editing Directives]] (Corrections.csv and nol_number_corrections.csv)
+* [[Character Encoding]]
 
 === Wiki features ===
 
