@@ -32,3 +32,24 @@ Here we focus on two scripts that are part of this repository:
 These two scripts support special editing directives, e.g. for deletion, adding an alias, declaring a specific name to be the canonical name, and so on.
 
 The scripts are self-documenting via the --help option. 
+== nol_number_corrections ==
+
+Here is a quick summary of the different directives that are supported, focusing on the three main fields of the "nol_number_corrections" format, i.e.
+"Original_nol_name,nol_number,steve_number".
+
+In the following, a **distinguished name** is a name for which there is a unique LOCALID (ignoring "000 000" entries) at the time the directive is processed.
+
+* Standard - specify all three fields explicitly (using ",," if nol_number is empty)
+** e.g.: SPEAKER,,023
+* Split almost all CamelCase names
+** e.g.: ^,,^
+* Guided split (see below)
+** e.g.: "UnusualSplit, Abc",,"Unusual^Split, A." 
+* Deletion
+** e.g. "RESENT: 000",021,DELETE
+* Alias creation for an existing **distinguished name**: ALIAS,,DISTINGUISHED_NAME
+** e.g.: Smith J,,"Smith, John A."
+
+
+
+The idea with 'guided splits" is that on the RHS, each of the parts should already be defined. In the example, "Unusual" and "Split, A." should already have entries in pty_nol.txt.
