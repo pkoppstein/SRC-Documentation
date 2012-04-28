@@ -1,22 +1,25 @@
-Three-digit codes:
+==Three-digit Codes==
+
+On each line, the defined three-digit code is shown, together with the intended interpretation and any short forms that may be allowed in the Corrections.csv format (see [[Format_for_Editing_Directives]]).
+
 {{{
-100 D DEMOCRAT
-150 ID INDEPENDENT_DEMOCRAT
-200 R REPUBLICAN
-250 IR INDEPENDENT_REPUBLICAN
-300 I INDEPENDENT
-400 G GREEN
+100 DEMOCRAT : D
+150 INDEPENDENT_DEMOCRAT : ID
+200 REPUBLICAN : R
+250 INDEPENDENT_REPUBLICAN : IR
+300 INDEPENDENT : I
+400 GREEN : G
 500 PROGRESSIVE
 600 REFORM
 700 (*)
 800 CONSTITUTION
 900 LIBERTARIAN
 910 R&D
-920 YIM                 [Rhode Island]
+920 YIM                 # Rhode Island
 999 UNKNOWN
 }}}
 
-(*) "700" is a "catch-all" code for organizations that have not been assigned and are not likely to be assigned a three-digit code.
+(*) "700" is a "catch-all" code for organizations that have not been assigned, and are not likely to be assigned, a three-digit code.
 
 
 If an additional code is needed, consult VoteView (http://voteview.com/party3.htm).
