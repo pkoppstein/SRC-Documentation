@@ -28,7 +28,22 @@ Here we focus on two scripts that are part of this repository:
 
 These two scripts support special editing directives, e.g. for deletion, adding an alias, declaring a specific name to be the canonical name, and so on.
 
-The scripts are self-documenting via the --help option. 
+The scripts are self-documenting via the --help option.
+
+==Corrections.csv==
+
+The four main fields of an editing directive in the Corrections.csv format are:
+{{{nol_number,Original_nol_name,CorrectName,CorrectDistrict,CorrectParty}}}
+
+In general, any of these fields may be left blank.
+
+Here is a quick summary of the different forms that are currently recognized:
+
+* Standard: nol_number or Original_nol_name is specified, together with at least one of the other fields
+** e.g. to update the DISTRICTID of the entry with LOCALID equal to 012: {{{012, , ,Featherworth-10,}} 
+* Addition of alias - e.g. to add "Smith, A" as an alias of an existing entry, "Smith, A.":
+** e.g. {{{_,"Smith, A","Smith, A."}}}
+ 
 == nol_number_corrections ==
 
 Here is a quick summary of the different directives that are supported, focusing on the three main fields of the "nol_number_corrections" format, i.e.
