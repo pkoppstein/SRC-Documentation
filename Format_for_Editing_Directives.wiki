@@ -61,6 +61,8 @@ In the following, a **distinguished name** is a name for which there is a unique
 ** e.g. {{{"UnusualSplit, Abc",,"Unusual^Split, A."}}}
 * Deletion
 ** e.g. {{{RESENT: 000,021,DELETE}}}
+* Specification of the canonical name
+** e.g. {{{"Smith, A.",,*}}}
 * Alias creation for an existing **distinguished name**: ALIAS~,~,DISTINGUISHED_NAME
 ** e.g. {{{Smith J,,"Smith, John A."}}}
 
