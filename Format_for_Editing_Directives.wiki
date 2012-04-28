@@ -26,6 +26,8 @@ Here we focus on two scripts that are part of this repository:
 * edit.NOMINATE.rb for processing directives in the Corrections.csv format
 * updateLocalid.NOMINATE.rb for processing directives in the nol_number_corrections.csv format
 
+One of the main differences between these scripts is that **edit.NOMINATE.rb only alters the pty_nol.txt file**.
+
 These two scripts support special editing directives, e.g. for deletion, adding an alias, declaring a specific name to be the canonical name, and so on.
 
 They also allow comment lines (lines beginning with #) and empty lines.
