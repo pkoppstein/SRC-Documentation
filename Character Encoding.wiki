@@ -9,11 +9,13 @@ For further details, see for example [[http://en.wikipedia.org/wiki/ISO/IEC_8859
 ==Checking and Conversion==
 On Linux or Mac, use the file command to check the encoding of one or more files. The "iconv" command can be used to perform conversions.
 ===Linux===
-{{{$ file -i pty_nol.txt
+{{{
+$ file -i pty_nol.txt
 pty_nol.txt: text/plain; charset=us-ascii
 }}}
 ===Mac===
-{{{$ file -I pty_nol.txt
+{{{
+$ file -I pty_nol.txt
 pty_nol.txt: text/plain; charset=us-ascii
 }}}
 
