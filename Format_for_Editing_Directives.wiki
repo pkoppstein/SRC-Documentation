@@ -1,0 +1,34 @@
+==Synopsis==
+===Corrections.csv===
+
+Header:
+{{{
+State,Chamber,StartYear,EndYear,RegularorSpecial,nol_number,Original_nol_name,CorrectName,CorrectDistrict,CorrectParty,Source
+}}}
+
+Example:
+{{{
+MO,H,2002,2002,reg,NA,"Jones, Robing Wright","Jones, Robin Wright",,NA,Typo
+}}}
+
+===nol_number_corrections.csv===
+Header:
+{{{
+State,Chamber,StartYear,EndYear,RegularorSpecial,Original_nol_name,nol_number,steve_number,Notes
+}}}
+
+Example:
+{{{
+MO,h,1996,1996,reg,"Davis",032,"Davis, Dorathea",[canonicalize.NOMINATE]
+}}}
+
+==Scripts==
+There are various scripts for processing editing directives.  Earlier versions did not support nol_number in Corrections.csv. Some later versions may not require this field.
+
+Here we focus on two scripts that are part of this repository:
+* edit.NOMINATE.rb for processing directives in the Corrections.csv format
+* updateLocalid.NOMINATE.rb for processing directives in the nol_number_corrections.csv format
+
+These two scripts support special editing directives, e.g. for deletion, adding an alias, declaring a specific name to be the canonical name, and so on.
+
+The scripts are self-documenting via the --help option. 
