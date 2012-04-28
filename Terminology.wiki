@@ -1,3 +1,21 @@
+===Canonical Name===
+A distinguished name for a legislator.  This name will be used when coalescing voting vectors.
+
+Within the context of a pty_nol.txt file, the canonical name for a LOCALID exists if and only if there is a single NAME associated with that LOCALID, ignoring all entries in which both the PARTYID and DISTRICTID have been zeroed-out.  
+
+===Coalescence===
+The process of combining two or more voting vectors of a single legislator into a single voting vector. For example, the voting vector resulting from combining 191 and 969 is 161.
+
+===nomrecord.txt file===
+A file containing details about the voting history of legislators.
+
+Each row contains the following fields:
+* LOCALID - three digit legislator id, unique within the context of this state and session.
+* NAME - a character string
+* VOTINGVECTOR - a character string with each vote encoded as a decimal digit
+
+A correctly formated nomrecord.txt file is said to be **normalized** if each LOCALID appears at most once.
+
 ===pty_nol.txt file===
 
 A file providing information about legislators for a particular state and session.  
@@ -11,12 +29,22 @@ Apart from the first line, each line contains values for:
 When such a file meets certain constraints, it is said to be **normalized**.  Apart from being properly formated, the main constraints are as follows:
 * there is exactly one **canonical name** per LOCALID
 * the PARTYID and DISTRICTID of all non-canonical names are both "000".
-* neither the PARTYID nor the DISTRICTID of a canonical are "000"
+* neither the PARTYID nor the DISTRICTID of a canonical name are "000"
 
-===Canonical Name===
-A distinguished name for a legislator.  This name will be used when coalescing voting vectors.
+==Voting Vector==
+A string of decimal digits reflecting the voting record of a single legislator:
 
-Within the context of a pty_nol.txt file, the canonical name for a LOCALID exists if and only if there is a single NAME associated with that LOCALID, ignoring all entries in which both the PARTYID and DISTRICTID have been zeroed-out.  
+* 0 - not a member
+* 1 - yea
+* 2 - paired yea
+* 3 - announced yea
+* 4 - announced nay
+* 5 - paired nay
+* 6 - nay
+* 7 - unresolved (conflicting evidence)
+* 9 - no vote recorded
 
+Within a single nomrecord.txt file, the voting vectors should all be of the same length, and the results of a particular rollcall should all be represented at the same position.  
 
+Usually, the voting vector is in chronological order, but that is currently not a requirement.
 
