@@ -14,6 +14,15 @@ Each row contains the following fields:
 * NAME - a character string
 * VOTINGVECTOR - a character string with each vote encoded as a decimal digit
 
+A **well-formed** nomrecord.txt file adheres to the following requirements:
+* Column 1: blank
+* Columns 2 through 4: blank or three-digit LOCALID
+* Column 5: blank
+* Columns 6 through 35: left-justified string (intended for the NAME field) 
+* Columns 36 and up: voting vector of the same length for every record
+
+A legislator NAME cannot be more than 27 characters (ignoring trailing blanks), as that is the width of the NAME field in a pty_nol.txt file (columns 6 through 32).
+
 A correctly formated nomrecord.txt file is said to be **normalized** if each LOCALID appears at most once.
 
 ===pty_nol.txt file===
@@ -26,10 +35,28 @@ Apart from the first line, each line contains values for:
 * PARTYID - a three-digit party code for the legislator
 * DISTRICTID - a character string (often a three-digit identifier)
 
-When such a file meets certain constraints, it is said to be **normalized**.  Apart from being properly formated, the main constraints are as follows:
-* there is exactly one **canonical name** per LOCALID
+A **well-formed** pty_nol.txt file adheres to the following requirements:
+* The first line has a string of the following form beginning in column 1: " cols = N" where N is a decimal integer
+* All other lines are formatted as follows:
+** Column 1: blank
+** Columns 2 through 4: blank or three-digit LOCALID
+** Column 5: blank
+** Columns 6 through 32: left-justified non-empty string intended for the NAME field 
+** Columns 33 through 35: 000 or a three-digit string intended for the PARTYID
+** Column 36: blank
+** Columns 37 and up: 000 or a left-justified string for DISTRICTID (often a three-digit code)
+
+When a pty_nol.txt file meets the following additional constraints, it is said to be **normalized**:
+* for each pair of values (LOCALID, NAME), there is at most one entry with those values.
+* there is exactly one **canonical name** per LOCALID.
 * the PARTYID and DISTRICTID of all non-canonical names are both "000".
-* neither the PARTYID nor the DISTRICTID of a canonical name are "000"
+* neither the PARTYID nor the DISTRICTID of a canonical name are "000".
+
+An entry in a pty_nol.txt file is said to have been "zeroed-out" if the PARTYID and DISTRICTID fields both have the value "000".
+
+A pair of pty_nol.txt and nomrecord.txt files is said to be **jointly normalized** if each is normalized, and if in addition:
+* the value N given on the first line of the pty_nol.txt file is the number of characters on every line in nomrecord.txt.
+* ignoring entries in pty_nol.txt that have been "zeroed-out", for every LOCALID in nomrecord.txt, there is exactly one entry in pty_nol.txt with the same LOCALID. 
 
 ==Voting Vector==
 A string of decimal digits reflecting the voting record of a single legislator:
