@@ -62,7 +62,47 @@ NAY: present
 : Samuels
 
 result: Passed
+}}}
 
-Event:   # a section header
-Add: D. Smith   # This implies that the previous Smith was not "D. Smith"
+==Defined Tags==
+{{{
+: memberName       # either as given, or as disambiguated
+
+ABSENT: count      # as given
+AYES: count        # as given
+CHAMBER:           # H | A | S | U | L
+FILE: filename     # file being read
+GIVEN DATE: text   # as given
+Generated: YYYYMMDD  # date the program was run
+Generator: filename version # name and version of program
+NAYS: count        # as given
+NOTE: text         # program-generated
+REREADING: text    # sometimes it's necessary to lookahead, in which case the program may indicate the text it is re-reading
+RESULT TEXT: text  # as given
+Result: result     # 1 = Passed, 0 = Failed, ... 
+
+Rollcall: [ignore] # start of new section; (question:, bill:, and bill_number:, etc., follow);
+                   # specify "ignore" if it can be determined that this rollcall should be ignored.
+
+SESSION: code      # reg | org | ss | ...
+STATE: two-letters # standard code
+WARNING: text      # program-generated
+bill: text         # file number (as given) (*)
+bill_number: n     # the sequence number of this rollcall (counting from 1)
+date:  YYYY-MM-DD  # date as interpreted (the subsequent Rollcall: blocks can reliably be associated with this date)
+description: text  # text or URL associated with vote (*)
+question: text     # parsed from proceedings (*)
+Event:             # a section header
+Add: D. Smith      # This implies that the previous Smith was not "D. Smith"
+}}}
+
+(*) For example:
+
+<BR>On the question "Shall the bill pass?" (<A HREF="http://www.legis.state.ia.us/GA/78GA/Legislation/HF/02100/HF02145/Current.html">H.F. 2145</A>)
+
+=>
+{{{
+question: Shall the bill pass?
+bill: H.F. 2145
+description: http://www.legis.state.ia.us/GA/78GA/Legislation/HF/02100/HF02145/Current.html
 }}}
