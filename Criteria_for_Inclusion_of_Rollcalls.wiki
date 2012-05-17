@@ -1,0 +1,38 @@
+All rollcalls with a specific bill, amendment or resolution number should be included.
+
+Votes to adjourn or to approve the journal should be excluded.
+
+Here are the "question" and "bill" patterns for three years of IA House proceedings.
+(The last number on each line is the frequency count).
+All of these rollcalls can be included on the assumption that the question is included in voteview.tsv.
+
+{{{
+question: Shall Rule _ be suspended to consider House File _? 1
+**question: Shall Rule _ be suspended? 1**
+question: Shall amendment _ as amended, be adopted? 16
+question: Shall amendment _ be adopted? 186
+question: Shall amendment _ to amendment _ be adopted? 27
+question: Shall amendment _ to amendment _ to the Senate amendment _ be adopted? 1
+question: Shall amendment _ to the Senate amendment _ be adopted? 26
+question: Shall amendment _ to the committee amendment _ be adopted? 37
+question: Shall the House concur in the Senate amendment _ 3
+question: Shall the House on reconsideration pass the bill, the objections (_) of the Governor to the contrary notwithstanding? 2
+question: Shall the House recede from its amendment? 1
+question: Shall the House reconsider the vote on amendment _ 1
+question: Shall the Senate amendment _ to the House amendment, be adopted? 1
+question: Shall the bill pass? 931
+question: Shall the committee amendment _ as amended, be adopted? 4
+question: Shall the committee amendment _ be adopted? 2
+**question: Shall the conference committee report be adopted? 2**
+question: Shall the joint resolution be adopted and agreed to by the House? 2
+question: Shall the joint resolution be adopted and agreed to? 5
+question: Shall the motion to defer House File _ prevail? 1
+**question: Shall the resolution be adopted? 1**
+question: Shall the rules be suspended to consider amendment _ 28
+question: Shall the rules be suspended to consider amendment _ as amended? 3
+question: Shall the rules be suspended to consider amendment _ to amendment _ 5
+question: Shall the rules be suspended to consider amendment _ to the Senate amendment _ 1
+question: Shall the rules be suspended to consider amendment _ to the committee amendment _ 11
+**question: Shall the rules be suspended? 1**
+question: Shall the vote by which amendment _ was adopted be reconsidered? 1
+}}}
