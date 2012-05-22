@@ -4,6 +4,7 @@ Welcome to the "states50" State Rollcall Project.  This webpage is under constru
 
 == Documentation ==
 * [[Terminology]]
+* [[Terminology#!voting-vector|Voting Codes]]
 * [[Party%20Codes|Party Codes]]
 * [[Schema%20for%20Additional%20Data|Schema for Additional Data]]
 
