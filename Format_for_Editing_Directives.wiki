@@ -51,7 +51,7 @@ Here is a quick summary of the different forms that are currently recognized:
 == nol_number_corrections ==
 
 Here is a quick summary of the different directives that are supported, focusing on the three main fields of the "nol_number_corrections" format, i.e.
-{{{Original_nol_name,nol_number,steve_number}}
+{{{Original_nol_name,nol_number,steve_number}}}
 
 In the following, a **distinguished name** is a name for which there is a unique LOCALID (ignoring "000 000" entries) at the time the directive is processed.
 
