@@ -1,5 +1,7 @@
 All rollcalls with a specific bill, amendment or resolution number should be included.
 
+Votes on rules, on points of order, and on appointments should also be included.
+
 Votes to adjourn or to approve the journal should be excluded.
 
 Here are the "question" and "bill" patterns for three years of IA House proceedings.
