@@ -1,0 +1,22 @@
+==Disclaimers==
+
+There are many sources and types of variability in the roll call data, which have been collected over a number of years by a number of individuals using a combination of manual interventions and a wide variety of automated techniques. 
+
+In some cases, the process of creating the data files has involved "OCR" (optical character recognition); in most cases, computer programs have been used to parse official proceedings.  These proceedings themselves are of variable accuracy.  In some cases, it has been possible to resolve inconsistencies in the "raw data" by inference or research.  However, the quality control process has also varied over time. 
+
+For roll call data generated (or regenerated) since the beginning of 2012, attention has focused on including all roll calls, in chronological order; identifying inconsistencies, and where feasible resolving them.  The process of establishing "global ids" for individual legislators has resulted in many corrections. In many cases, additional details about the resolution of specific issues are documented in "notes" files.
+
+===Variability===
+
+nomrecord.txt:
+# Criteria for including roll calls
+## In the early days of the project, emphasis was placed on roll calls that were not unanimous.
+# Omission of roll calls due to OCR or parsing difficulties
+# Chronological order
+# Voting codes
+## Unless otherwise specified in the norecord2.tsv file, the only voting codes used are [169], with "9" representing anything other than a known "aye" or "nay".  The 0 (not a member) and 7 (contradictory information) voting codes were introduced in 2012.
+
+voteview.tsv:
+# in some cases, it has not been feasible to determine an accurate value for "membertotal"; for MN, for example, the membertotal value is just the sum of the "yeatotal" and "naytotal" values.
+
+
