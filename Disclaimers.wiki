@@ -4,7 +4,7 @@ There are many sources and types of variability in the roll call data, which hav
 
 In some cases, the process of creating the data files has involved "OCR" (optical character recognition); in most cases, computer programs have been used to parse official proceedings.  These proceedings themselves are of variable accuracy.  In some cases, it has been possible to resolve inconsistencies in the "raw data" by inference or research.  However, the quality control process has also varied over time. 
 
-For roll call data generated (or regenerated) since the beginning of 2012, attention has focused on including all roll calls, in chronological order; identifying inconsistencies, and where feasible resolving them.  The process of establishing "global ids" for individual legislators has resulted in many corrections. In many cases, additional details about the resolution of specific issues are documented in "notes" files.
+For roll call data generated (or regenerated) since the beginning of 2012, attention has focused on including, in chronological order, all non-house-keeping roll calls (see [[Criteria_for_Inclusion_of_Rollcalls]] for further details); identifying inconsistencies, and either documenting or resolving them.  The process of establishing "global ids" for individual legislators has resulted in many corrections to information about legislators. In some cases, details about the resolution of specific issues are documented in "notes" files.
 
 ===Variability===
 
@@ -17,6 +17,5 @@ nomrecord.txt:
 ## Unless otherwise specified in the norecord2.tsv file, the only voting codes used are [169], with "9" representing anything other than a known "aye" or "nay".  The 0 (not a member) and 7 (contradictory information) voting codes were introduced in 2012.
 
 voteview.tsv:
-# in some cases, it has not been feasible to determine an accurate value for "membertotal"; for MN, for example, the membertotal value is just the sum of the "yeatotal" and "naytotal" values.
-
+# In most cases, the "membertotal" is obtained by summing whichever tallies are given for ayes, nays, absentees, and present-but-not-voting members. In the case of mn_h97_98, for example, the membertotal value is just the sum of the "yeatotal" and "naytotal" values, as the other subtotals are not given.
 
