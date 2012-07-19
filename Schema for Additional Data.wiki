@@ -77,6 +77,12 @@ LOCALID,SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,
 VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
 Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
 
+**In each edition of the StateRollCall data, the combination of descriptive fields of a legislator should be unique.**
+
+The "descriptive fields" are:
+
+{{{SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,VARIANTS,BIRTHYEAR,GENDER}}}
+
 ==== Example: ====
 {{{097,Clemens,Samuel,L.,Twain,,Mark Twain|Mark (Samuel Langhorne Clemens) Twain,1835,M,}}}
 
