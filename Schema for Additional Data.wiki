@@ -73,7 +73,7 @@ This file will contain just one data record.  All fields except the last four ar
 
 == File: legislator.tsv ==
 ==== Header: ====
-LOCALID,SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,
+LOCALID,SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,NICKNAME,
 VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
 Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
 
@@ -81,10 +81,11 @@ Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
 
 The "descriptive fields" are:
 
-{{{SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,VARIANTS,BIRTHYEAR,GENDER}}}
+{{{SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,NICKNAME,BIRTHYEAR,GENDER}}}
 
+(VARIANTS is not regarded as descriptive because it is conceptually an unordered list.)
 ==== Example: ====
-{{{097,Clemens,Samuel,L.,Twain,,Mark Twain|Mark (Samuel Langhorne Clemens) Twain,1835,M,}}}
+{{{097,Clemens,Samuel,L.,Twain,,Sam,Mark Twain|Mark (Samuel Langhorne Clemens) Twain,1835,M,}}}
 
 Except possibly in the VARIANTS field, all components of a person's name should be given using the normal conventions regarding upper and lower case, e.g. John A. Smith, III.
 
@@ -97,11 +98,12 @@ In the following, "+" signifies that at least one of BIRTHYEAR or full FIRSTNAME
 * + FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
 *  MIDDLENAMES - preferably all middle names, or at least initials
 *  ALTERNATIVESURNAMES - multiple alternatives should be separated by | (e.g. "Smith|Jones")
-*  SUFFIX     - Jr|Sr|II|III|...
+*  SUFFIX     - the suffix or suffixes, for example: Jr. III
+*  NICKNAME   - usually a single name, without parentheses or quotation marks, for example: Jim
 *  VARIANTS   - pipe-delimited variants of the full name that cannot be directly inferred from the other name fields (see below).
 * + BIRTHYEAR  - YYYY
 *  GENDER     - M|F
-*  GLOBALID   - the global id for this project
+*  GLOBALID   - the global id for this project, of the form: STyyyyCNNN where ST is a two-letter state abbreviation, yyyy is a year, C is U or L (for upper or lower house), and NNN consists of three digits.
 *  Votesmart  - id
 *  OpenStates - id
 *  CSMSP      - id
