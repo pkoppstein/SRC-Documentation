@@ -4,7 +4,8 @@ Records in a .tsv file need not have trailing tabs.
 
 ==members.tsv==
 
-members.tsv is a global table for individuals.  The only required field are GLOBALID and SURNAME, but either the Votesmart id or the FIRSTNAME should also be given.
+members.tsv is a global table for individuals.  Distinct individuals should have distinct SRC global ids, but for the sake of integrity, both GLOBALID and SURNAME are required.
+In addition, each entry should have a Votesmart id or a FIRSTNAME.
 
 The mapping from other ids to GLOBALID is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.  
 
@@ -16,14 +17,14 @@ The fields of members.tsv are as follows:
 ** C is either U or L (for upper or lower chamber)
 ** lid is the three-digit SRC localid for this person in ST/st_yy/reg
 * * SURNAME - normally as listed in the vote record
-* FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
+* + FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
 * MIDDLENAMES - preferably all middle names, or at least initials
 * ALTERNATIVESURNAMES - multiple alternatives should be separated by | (e.g. "Smith|Jones")
 * SUFFIX - the suffix or suffixes, for example: Jr. III
 * NICKNAME - usually a single name, without parentheses or quotation marks, for example: Jim
 * BIRTHYEAR - YYYY
 * GENDER - M|F
-* Votesmart - id
+* + Votesmart - id
 * COMMENT
 
 ==rosetta.tsv==
