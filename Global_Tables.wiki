@@ -1,24 +1,30 @@
+On this page, required fields are marked with an asterisk (*).
+
+Records in a .tsv file need not have trailing tabs.
+
 ==members.tsv==
 
-members.tsv is a global table for individuals.  The only required fields are GLOBALID and SURNAME.
+members.tsv is a global table for individuals.  The only required field are GLOBALID and SURNAME, but either the Votesmart id or the FIRSTNAME should also be given.
 
-The mapping from GLOBALID to other ids is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.
+The mapping from other ids to GLOBALID is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.  
 
-* GLOBALID - the SRC global id for this person; normally, this is of the form STccyyClid where:
+The fields of members.tsv are as follows:
+
+* * GLOBALID - the SRC global id for this person; normally, this is of the form STccyyClid where:
 ** ST is a two-letter state code
 ** ccyy is a four-digit year
 ** C is either U or L (for upper or lower chamber)
 ** lid is the three-digit SRC localid for this person in ST/st_yy/reg
-* SURNAME - normally as listed in the vote record
-+ FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
-MIDDLENAMES - preferably all middle names, or at least initials
-ALTERNATIVESURNAMES - multiple alternatives should be separated by | (e.g. "Smith|Jones")
-SUFFIX - the suffix or suffixes, for example: Jr. III
-NICKNAME - usually a single name, without parentheses or quotation marks, for example: Jim
-+ BIRTHYEAR - YYYY
-GENDER - M|F
-Votesmart - id
-COMMENT
+* * SURNAME - normally as listed in the vote record
+* FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
+* MIDDLENAMES - preferably all middle names, or at least initials
+* ALTERNATIVESURNAMES - multiple alternatives should be separated by | (e.g. "Smith|Jones")
+* SUFFIX - the suffix or suffixes, for example: Jr. III
+* NICKNAME - usually a single name, without parentheses or quotation marks, for example: Jim
+* BIRTHYEAR - YYYY
+* GENDER - M|F
+* Votesmart - id
+* COMMENT
 
 ==rosetta.tsv==
 This is currently defined to be a two=column table that maps AUTHORITY:id to the SRC GLOBALID as follows:
@@ -29,3 +35,9 @@ This is currently defined to be a two=column table that maps AUTHORITY:id to the
 Both fields are required.
 
 The authority prefix "SRC" is reserved for the SRC project so that SRC localids can be mapped to SRC globalids.
+
+Other "well-known" prefixes are:
+
+* OS - OpenStates
+* VS - Votesmart
+* CSMSP 
