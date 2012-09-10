@@ -8,7 +8,7 @@ Records in a .tsv file need not have trailing tabs.
 ==members.tsv==
 
 members.tsv is a global table for individuals.  Distinct individuals should have distinct SRC global ids, but for the sake of integrity, both GLOBALID and SURNAME are required.
-In addition, each entry should have at least one of: FIRSTNAME or VOTESSMART_ID.
+In addition, each entry should have at least one of: FIRSTNAME or VOTESMART_ID.
 
 The mapping from other ids to GLOBALID is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.
 
