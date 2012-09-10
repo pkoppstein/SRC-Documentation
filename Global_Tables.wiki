@@ -1,4 +1,7 @@
-On this page, required fields are marked with an asterisk (*).
+On this page:
+* SRC stands for the "State Roll Call" project
+* "tsv" stands for "tab-separated values"
+* required fields are marked with an asterisk (*).
 
 Records in a .tsv file need not have trailing tabs.
 
@@ -7,7 +10,7 @@ Records in a .tsv file need not have trailing tabs.
 members.tsv is a global table for individuals.  Distinct individuals should have distinct SRC global ids, but for the sake of integrity, both GLOBALID and SURNAME are required.
 In addition, each entry should have a Votesmart id or a FIRSTNAME.
 
-The mapping from other ids to GLOBALID is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.  
+The mapping from other ids to GLOBALID is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.
 
 The fields of members.tsv are as follows:
 
@@ -27,15 +30,19 @@ The fields of members.tsv are as follows:
 * + Votesmart - id
 * COMMENT
 
-==rosetta.tsv==
-This is currently defined to be a two=column table that maps AUTHORITY:id to the SRC GLOBALID as follows:
+As indicated above, the SRC globalid of an individual has the form STccyyClid and should correspond to an individual with the SRC localid "lid" in the corresponding directory ST/st_yy/reg.  Obviously, not every such localid gives rise to a valid SRC globalid.
 
-* AUTHORITY is a code for the authority, and "id" is the id of the person according to that authority
-* GLOBALID is the SRC globalid
+==rosetta.tsv==
+This is currently defined to be a two-column table that maps AUTHORITY:id to the SRC GLOBALID as follows:
+
+* * AUTHORITY is a code for the authority, and "id" is an id of the person according to that authority
+* * GLOBALID is the SRC globalid
 
 Both fields are required.
 
-The authority prefix "SRC" is reserved for the SRC project so that SRC localids can be mapped to SRC globalids.
+The authority prefix "SRC" is a special case.  It can be used to map pseudo-SRC ids to actual SRC ids.  For example, if a legislator with SRC globalid NY1999L123 also appears with localid 234 in NY/ny_a00/reg, then the following would be an appropriate entry in rosetta.tsv:
+
+{{{SRC:NY2000L234,NY1999L123}}}
 
 Other "well-known" prefixes are:
 
