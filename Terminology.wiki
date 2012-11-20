@@ -51,6 +51,7 @@ When a pty_nol.txt file meets the following additional constraints, it is said t
 * there is exactly one **canonical name** per LOCALID.
 * the PARTYID and DISTRICTID of all non-canonical names are both "000".
 * neither the PARTYID nor the DISTRICTID of a canonical name are "000".
+* each individual has exactly one canonical name, and that name is distinct from all other canonical names in the file.
 
 An entry in a pty_nol.txt file is said to have been "zeroed-out" if the PARTYID and DISTRICTID fields both have the value "000".
 
