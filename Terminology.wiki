@@ -59,6 +59,14 @@ A pair of pty_nol.txt and nomrecord.txt files is said to be **jointly normalized
 * the value N given on the first line of the pty_nol.txt file is the number of characters on every line in nomrecord.txt.
 * ignoring entries in pty_nol.txt that have been "zeroed-out", for every LOCALID in nomrecord.txt, there is exactly one entry in pty_nol.txt with the same LOCALID. 
 
+If a seat is vacant during a session, the value of NAME should be "(Vacant)".  The entry would therefore have the form:
+
+{{{
+nnn (Vacant)                    999 districtid
+}}}
+where "nnn" is a valid LOCALID and "districtid" is the district id.
+
+
 ==Voting Vector==
 A string of decimal digits reflecting the voting record of a single legislator:
 
