@@ -21,7 +21,7 @@ On each line, the defined three-digit code is shown, together with the intended 
 
 (*) "700" is a "catch-all" code for organizations that have not been assigned, and are not likely to be assigned, a three-digit code.
 
-(**) r&d and d&r in NH should be coded as for REPUBLICAN and DEMOCRAT respectively.
+(~*~*) r&d and d&r in NH should be coded as for REPUBLICAN and DEMOCRAT respectively.
 
 
 If an additional code is needed, consult VoteView (http://voteview.com/party3.htm).
