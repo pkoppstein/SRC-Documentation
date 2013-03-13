@@ -82,5 +82,6 @@ A string of decimal digits reflecting the voting record of a single legislator:
 
 Within a single [[Terminology#!nomrecordtxt-file|nomrecord.txt]] file, the voting vectors should all be of the same length, and the results of a particular rollcall should all be represented at the same position.  
 
-Usually, the voting vector is in chronological order, but that is currently not a requirement.
- 
+If an acting representative has been appointed, his or her vote should be recorded under his or her name, and a "9" should be used for the House or Senate member who is on leave.
+
+Usually, the voting vector is in chronological order, but that is currently not a requirement.  Details about this should be recorded in [[Schema%20for%20Additional%20Data#!file-nomrecord2tsv|nomrecord2.tsv]].
