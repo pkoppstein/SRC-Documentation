@@ -59,6 +59,7 @@ A pair of pty_nol.txt and nomrecord.txt files is said to be **jointly normalized
 * the value N given on the first line of the pty_nol.txt file is the number of characters on every line in nomrecord.txt.
 * ignoring entries in pty_nol.txt that have been "zeroed-out", for every LOCALID in nomrecord.txt, there is exactly one entry in pty_nol.txt with the same LOCALID. 
 
+====Vacancies====
 If a seat is vacant during a session, the value of NAME should be "(Vacant)".  The entry would therefore have the form:
 
 {{{
@@ -66,6 +67,12 @@ nnn (Vacant)                    999 districtid
 }}}
 where "nnn" is a valid LOCALID and "districtid" is the district id.
 
+
+====Change of Party====
+If an individual changes party affiliation within a session, there should be separate entries in each of the two files pty_nol.txt and nomrecord.txt.  The localid of the later entry should be 500 plus the localid of the earlier entry.
+
+====Senators in House Sessions and Representatives in Senate Sessions====
+The districtid of a senator with an entry in a House pty_nol.txt file should have the form SD-did where "did" is the relevant senatorial district id; similarly, the districtid of a representative with an entry in a Senate pty_nol.txt file should have the form HD-did.
 
 ==Voting Vector==
 A string of decimal digits reflecting the voting record of a single legislator:
