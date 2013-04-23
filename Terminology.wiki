@@ -6,6 +6,22 @@ Within the context of a pty_nol.txt file, the canonical name for a LOCALID exist
 ===Coalescence===
 The process of combining two or more [[Terminology#!voting-vector|voting vectors]] of a single legislator into a single voting vector. For example, the voting vector resulting from combining 191 and 969 is 161.
 
+===Localid===
+In the context of a particular pair of pty_nol.txt and nomrecord.txt files, the "localid" defines the correspondence between voting vectors and legislators: every voting vector must have a distinct three-digit decimal identifier, and every such identifier must have a single entry (ignoring "000 000" entries for aliases) in the corresponding pty_nol.txt file.
+
+Every legislator who has a voting vector in a particular STATE-CHAMBER-YEAR or STATE-CHAMBER-YEAR1-YEAR2 context should have a distinct identifier in the form of a three-digit decimal number in the range 001 through 499. We shall refer to this as the primary local identifier.
+
+If a legislator casts a vote as a member of a second party in the same STATE-CHAMBER-YEARS context, that legislator should have a second voting vector. The localid of the second voting vector should be 500 plus the primary local identifier.
+
+In summary:
+{{{
+   lid1 lies in the range 001 through 499
+   lid2 = 500 + lid1
+}}}
+
+
+Within a particular STATE-CHAMBER-YEAR or STATE-CHAMBER-YEAR1-YEAR2 context, a particular legislator-party combination should have a single localid.
+ 
 ===nomrecord.txt file===
 A file containing details about the voting history of legislators for a particular state and session.
 
