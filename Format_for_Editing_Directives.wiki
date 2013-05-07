@@ -26,7 +26,7 @@ Here we focus on two scripts that are part of this repository:
 * edit.NOMINATE.rb for processing directives in the Corrections.csv format
 * updateLocalid.NOMINATE.rb for processing directives in the nol_number_corrections.csv format
 
-One of the main differences between these scripts is that **edit.NOMINATE.rb only alters the pty_nol.txt file**.
+One of the main differences between these scripts is that **edit.NOMINATE.rb only alters the pty_nol.txt file**. By contrast, updateLocalid.NOMINATE.rb can be used to coalesce all voting vectors in nomrecord.txt having the same LOCALID.
 
 These two scripts support special editing directives, e.g. for deletion, adding an alias, declaring a specific name to be the canonical name, and so on.
 
@@ -69,3 +69,13 @@ In the following, a **distinguished name** is a name for which there is a unique
 ** e.g. {{{Smith J,,"Smith, John A."}}}
 
 The idea with "guided splits" is that on the RHS, each of the parts should already be defined. In the example, "Unusual" and "Split, A." should already have entries in pty_nol.txt (or at least in the in-memory version when the directive is being processed).
+
+== Coalescence of Voting Vectors ==
+It sometimes happens that a single individual has two  or more entries in a nomrecord.txt file, and that the voting vectors therefore need to be coalesced.  The script ''updateLocalid.NOMINATE.rb'' will can do so based on the values of LOCALID.  Such coalescence can be triggered by editing directives as described above.
+
+Another way to use the script is as follows.  First ensure that the LOCALIDs of the voting vectors to be coalesced are the same in nomrecord.txt, and then run the following command after changing to the directory in which the nomrecord.txt and pty_nol.txt files both exist:
+
+{{{ updateLocalid.NOMINATE.rb --coalesce  
+}}}
+ 
+This command will read the pty_nol.txt file to determine which name to use.
