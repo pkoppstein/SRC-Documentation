@@ -71,7 +71,7 @@ In the following, a **distinguished name** is a name for which there is a unique
 The idea with "guided splits" is that on the RHS, each of the parts should already be defined. In the example, "Unusual" and "Split, A." should already have entries in pty_nol.txt (or at least in the in-memory version when the directive is being processed).
 
 == Coalescence of Voting Vectors ==
-It sometimes happens that a single individual has two  or more entries in a nomrecord.txt file, and that the voting vectors therefore need to be coalesced.  The script ''updateLocalid.NOMINATE.rb'' will can do so based on the values of LOCALID.  Such coalescence can be triggered by editing directives as described above.
+It sometimes happens that a single individual has two or more entries in a nomrecord.txt file, and that the voting vectors therefore need to be coalesced.  The script '''updateLocalid.NOMINATE.rb''' can do so based on the values of LOCALID.  Such coalescence can be triggered by editing directives as described above.
 
 Another way to use the script is as follows.  First ensure that the LOCALIDs of the voting vectors to be coalesced are the same in nomrecord.txt, and then run the following command after changing to the directory in which the nomrecord.txt and pty_nol.txt files both exist:
 
