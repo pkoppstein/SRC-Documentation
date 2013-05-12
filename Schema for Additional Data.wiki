@@ -75,7 +75,7 @@ This file will contain just one data record.  All fields except the last four ar
 ==== Header: ====
 LOCALID,SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,NICKNAME,
 VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
-Votesmart,OpenStates,CSMSP,KlarnerID,BonicaID,COMMENT
+Votesmart,OpenStates,CSMSP,Klarner,Bonica,COMMENT
 
 **In each edition of the StateRollCall data, the combination of descriptive fields of a legislator should be unique.**
 
@@ -107,6 +107,8 @@ In the following, "+" signifies that at least one of BIRTHYEAR or full FIRSTNAME
 *  Votesmart  - id
 *  OpenStates - id
 *  CSMSP      - id
+*  Klarner    - id
+*  Bonica     - id
 *  COMMENT
 
 Note on VARIANTS:  
