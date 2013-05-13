@@ -43,7 +43,7 @@ This file will contain just one data record.  All fields except the last four ar
 
 * *STATE:   two-letter upper-case abbreviation (CONTROLLED)
 * *CHAMBER: L|U (L for lower house, U for upper house)
-* *SESSION: reg|ss|ss1|ss2|org (following current practice) (CONTROLLED)
+* *SESSION: reg|ss|ss1|ss2|org (following current practice) or a combination of these, e.g. reg+ss (CONTROLLED)
 * *CODES:   codes used in voting vector, a selection in numerically increasing order from:
 ** 0=not a member
 ** 1=Yea
