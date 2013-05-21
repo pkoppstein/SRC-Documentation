@@ -1,14 +1,16 @@
+{{{DRAFT}}}
+
 In the wild, district identifiers can be arbitrary strings, but values in the DISTRICTID field should conform to the following conventions, which are intended to foster invertibility in typical cases:
 
 # The value of DISTRICTID for a particular district should be the same across sessions.
-# For numerical district ids, values should be left-padded with 0s so that the number is at least 3 digits.
+# For numerical district ids, values should be left-padded with 0s so that the string has at least 3 digits.
 # The empty string should be used if the value is unknown or "to be determined".
 # The value "999" should be used for "not applicable", for example for a Lt. Governor. 
 # The value "000" is reserved for aliases.
-# The value should be selected from [A-Za-z0-9-], that is, it should be selected from the set of alphanumeric characters augmented by a hyphen (-). 
+# The value should be selected from [A-Za-z0-9-], that is, the characters in the string should be selected from the set of alphanumeric characters augmented by a hyphen (-). 
 # Spaces in actual district names should be replaced by "-".
-# For districts represented by more than one person, the seat or position number or letter should be included if possible as a trailing suffix: if the qualifier is a letter, it should be uppercased, e.g "District 14 Seat A" would become 014A; if the qualifier is an integer, it should be separated from the district identifier proper by a hyphen, e.g. "District 14 Position 2" would become 014-2.
-# Ordinal prefixes should be replaced by cardinal suffixes of the form "-N" where N is a decimal with at least two digits, using "0" as padding. For example "First Washington" would become Washington-01.
+# For districts represented by more than one person, the seat or position number or letter should be included if possible as a trailing suffix: if the qualifier is a letter, it should be uppercased, e.g "District 14 Seat A" would become 014A, but "Clinton Seat A" would become "Clinton-A"; if the qualifier is an integer, it should be separated from the district identifier proper by a hyphen, e.g. "District 14 Position 2" would become 014-2.
+# Ordinal prefixes should be replaced by cardinal suffixes of the form "-N" where N is a decimal with at least two digits, using "0" as padding. For example "First Washington" would become "Washington-01".
 # Ordinary capitalization should be used.
 
 Here are some examples:
