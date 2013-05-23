@@ -98,11 +98,12 @@ Event:             # a section header
 Add: D. Smith      # This implies that the previous Smith was not "D. Smith"
 }}}
 
-(*) For example:
+(*) For example, this HTML snippet from a Journal:
 
+{{{
 <BR>On the question "Shall the bill pass?" (<A HREF="http://www.legis.state.ia.us/GA/78GA/Legislation/HF/02100/HF02145/Current.html">H.F. 2145</A>)
-
-=>
+}}}
+could be encoded as follows:
 {{{
 question: Shall the bill pass?
 bill: H.F. 2145
