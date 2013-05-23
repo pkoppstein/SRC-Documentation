@@ -18,4 +18,4 @@ nomrecord.txt:
 
 voteview.tsv:
 # In most cases, the "membertotal" is obtained by summing whichever tallies are given for ayes, nays, absentees, and present-but-not-voting members. In the case of mn_h97_98, for example, the membertotal value is just the sum of the "yeatotal" and "naytotal" values, as the other subtotals are not given.
-
+# The value in the "result" field may often be inaccurate and should never be relied on unless the script that generated it has been reviewed.
