@@ -1,7 +1,7 @@
 ===Canonical Name===
 A distinguished name for a legislator.  This name will be used when coalescing voting vectors.
 
-Within the context of a pty_nol.txt file, the canonical name for a LOCALID exists if and only if there is a single NAME associated with that LOCALID, ignoring all entries in which both the PARTYID and DISTRICTID have been zeroed-out.  
+Within the context of a pty_nol.txt file, the canonical name for a LOCALID exists if and only if there is a single NAME associated with that LOCALID, ignoring all entries in which both the PARTYID and [[District%20Identifiers|DISTRICTID]] have been zeroed-out.  
 
 ===Coalescence===
 The process of combining two or more [[Terminology#!voting-vector|voting vectors]] of a single legislator into a single voting vector. For example, the voting vector resulting from combining 191 and 969 is 161.  See [[Format_for_Editing_Directives#!coalescence-of-voting-vectors | Coalescence of Voting Vectors]] for details about a script for coalescing two or more voting vectors.
@@ -49,7 +49,7 @@ Apart from the first line, each line contains values for:
 * LOCALID - a three-digit identifier for a legislator
 * NAME - a canonical name or alias for a legislator
 * PARTYID - a three-digit party code for the legislator
-* DISTRICTID - a character string (often a three-digit identifier)
+* [[District%20Identifiers|DISTRICTID]] - a character string (often a three-digit identifier)
 
 A **well-formed** pty_nol.txt file adheres to the following requirements:
 * The first line has a string of the following form beginning in column 1: " cols = N" where N is a decimal integer
@@ -88,7 +88,7 @@ where "nnn" is a valid LOCALID and "districtid" is the district id.
 If an individual changes party affiliation within a session, there should be separate entries in each of the two files pty_nol.txt and nomrecord.txt.  The localid of the later entry should be 500 plus the localid of the earlier entry.
 
 ====Senators in House Sessions and Representatives in Senate Sessions====
-The districtid of a senator with an entry in a House pty_nol.txt file should have the form SD-did where "did" is the relevant senatorial district id; similarly, the districtid of a representative with an entry in a Senate pty_nol.txt file should have the form HD-did.
+The [[District%20Identifiers|DISTRICTID]] of a senator with an entry in a House pty_nol.txt file should have the form SD-did where "did" is the relevant senatorial district id; similarly, the DISTRICTID of a representative with an entry in a Senate pty_nol.txt file should have the form HD-did.
 
 ==Voting Vector==
 A string of decimal digits reflecting the voting record of a single legislator:
