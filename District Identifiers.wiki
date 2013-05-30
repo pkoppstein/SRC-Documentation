@@ -1,5 +1,3 @@
-{{{DRAFT}}}
-
 In the wild, district identifiers can be arbitrary strings, but values in the DISTRICTID field should conform to the following conventions, which are intended to foster invertibility in typical cases:
 
 # The value of DISTRICTID for a particular district should be the same across sessions.
@@ -9,7 +7,7 @@ In the wild, district identifiers can be arbitrary strings, but values in the DI
 # The value "000" is reserved for aliases.
 # The value should be selected from [A-Za-z0-9-], that is, the characters in the string should be selected from the set of alphanumeric characters augmented by a hyphen (-). 
 # Spaces in actual district names should be replaced by "-".
-# For districts represented by more than one person, the seat or position number or letter should be included if possible as a trailing suffix: if the qualifier is a letter, it should be uppercased, e.g "District 14 Seat A" would become 014A, but "Clinton Seat A" would become "Clinton-A"; if the qualifier is an integer, it should be separated from the district identifier proper by a hyphen, e.g. "District 14 Position 2" would become 014-2.
+# For districts represented by more than one person, the seat or position number or letter should be included if possible as a trailing suffix: if the qualifier is a letter, it should be uppercased, e.g "District 14 Seat A" would become 014A, but "Clinton Seat A" would become "Clinton-A"; if the qualifier is an integer, it should be separated from the district identifier proper by a hyphen, e.g. "District 14 Position 2" would become 014-2. The district number should be left-padded, so that the district id as a whole has four characters.
 # Ordinal prefixes should be replaced by cardinal suffixes of the form "-N" where N is a decimal with at least two digits, using "0" as padding. For example "First Washington" would become "Washington-01".
 # Ordinary capitalization should be used.
 # The DISTRICTID of a senator with an entry in a House pty_nol.txt file should have the form SD-did where "did" is the relevant senatorial district id; similarly, the DISTRICTID of a representative with an entry in a Senate pty_nol.txt file should have the form HD-did.
@@ -18,10 +16,12 @@ In the wild, district identifiers can be arbitrary strings, but values in the DI
 Here are some examples:
 
 {{{
-000
-117
-118A
-119-2
+000            # the entry defines an alias
+999            # "known unknown"
+TBD            # to be determined
+017            # left-padding
+018A           # left-padding
+Grand_Isle     # special case
 Washington-02  # Second Washington
 Washington-1   # Washington Position 1
 Chittenden-3-6 # A district in Vermont
@@ -29,6 +29,8 @@ SD-003         # Senate District 003, in a House pty_nol.txt file
 }}}
 
 [[http://followthemoney.org|followthemoney.org]] has proven to be a useful guide in determining DISTRICTID values. 
+
+Note: This policy was applied retrospectively in May, 2013.
 
 
 
