@@ -1,51 +1,115 @@
+==Overview==
+
+This page defines a simple relational model for SRC data in terms of just three global tables:
+
+1. legislators.table - a table for legislators
+2. rollcalls.table - a table for their votes 
+3. rosetta.table - a "Rosetta Stone" for recording a one-to-one mapping between SRC Global IDs and similar "global ids" defined by other authorities.
+
+Additional tables containing data useful for project management may also be useful. One such table is defined here: a table for mapping aliases of a legislator to the SRC Global IDs.
+
+Each relational table can be implemented or represented in a number of ways, e.g. using one or more files. If more than one file is used for any one table, however, it should be possible to derive the full table simply by concatenating the corresponding files.
+
+===Relationship with pty_nol.txt and nomrecord.txt files===
+The "legislators" and "rollcalls" tables consolidate the information in "pty_nol.txt" and "nomrecord.txt" files, eliminating the need for localids and the dependence on the "ST/st_cyy/session" directory structure.  However GLOBALID values are derived in part from localid values, as explained below.
+
+===Abbreviations and Conventions===
 On this page:
 * SRC stands for the "State Roll Call" project
+* GID is the SRC global id (this project's global id of a legislator)
 * "tsv" stands for "tab-separated values"
-* required fields are marked with an asterisk (*).
+* "ftm" is an abbreviation referring to "followthemoney.org"
+* "CSMSP" refers to the Center for the Study of Money in State Politics.
 
-Records in a .tsv file need not have trailing tabs.
+In addition:
 
-==members.tsv==
+* lid = local id of a legislator (three digits)
+* pid = party id (three digits)
+* did = district id (a string without spaces)
+* vv = voting vector (as in nomrecord.txt)
 
-members.tsv is a global table for individuals.  Distinct individuals should have distinct SRC global ids, but for the sake of integrity, both GLOBALID and SURNAME are required.
-In addition, each entry should have at least one of: FIRSTNAME or VOTESMART_ID.
+Required fields are marked with an asterisk (*).
 
-The mapping from other ids to GLOBALID is achieved via the so-called "Rosetta Stone" table, rosetta.tsv.
+==Global IDs==
+GID = STyyyyCnnn
 
-The fields of members.tsv are as follows:
+where:
 
-* * GLOBALID - the SRC global id for this person; normally, this is of the form STccyyClid where:
-** ST is a two-letter state code
-** ccyy is a four-digit year
-** C is either U or L (for upper or lower chamber)
-** lid is the three-digit SRC localid for this person in ST/st_yy/reg
-* * SURNAME - normally as listed in the vote record
-* + FIRSTNAME - first name or at least first initial; at least one of BIRTHYEAR or full FIRSTNAME should be given
-* MIDDLENAMES - preferably all middle names, or at least initials
-* ALTERNATIVESURNAMES - multiple alternatives should be separated by | (e.g. "Smith|Jones")
-* SUFFIX - the suffix or suffixes, for example: Jr. III
-* NICKNAME - usually a single name, without parentheses or quotation marks, for example: Jim
-* BIRTHYEAR - YYYY
-* GENDER - M|F
-* + VOTESMART_ID - the votesmart id of this individual 
-* COMMENT
+yyyy is a year (generally the first year in which we have a voting vector, ignoring any legislative days in Nov and Dec)
 
-As indicated above, the SRC globalid of an individual has the form STccyyClid and should correspond to an individual with the SRC localid "lid" in the corresponding directory ST/st_yy/reg.  Obviously, not every such localid gives rise to a valid SRC globalid.
+C is U or L (upper or lower house)
 
-==rosetta.tsv==
-This is currently defined to be a two-column table that maps AUTHORITY:id to the SRC GLOBALID as follows:
+nnn is the corresponding lid
 
-* * AUTHORITY is a code for the authority, and "id" is an id of the person according to that authority
-* * GLOBALID is the SRC globalid
+The GID selected for an individual must correspond with an existing lid in the SRC collection of data.
 
-Both fields are required.
 
-The authority prefix "SRC" is a special case.  It can be used to map pseudo-SRC ids to actual SRC ids.  For example, if a legislator with SRC globalid NY1999L123 also appears with localid 234 in NY/ny_a00/reg, then the following would be an appropriate entry in rosetta.tsv (using "," to indicate the field delimiter):
+===Current per-session format===
 
-{{{SRC:NY2000L234,NY1999L123}}}
+{{{
+pty_nol.txt:   lid name pid did
+nomrecord.txt: lid name vv
+}}}
 
-Other "well-known" prefixes are:
+==SRC Format==
 
-* OS - OpenStates
-* VS - Votesmart
-* CSMSP 
+In the following descriptions, the field names are shown separated by spaces.  
+
+In general, the .tsv format is preferred for implementations of any of the tables as files.
+
+===legislators.table===
+This table is logically derived from legislator.tsv files.
+
+{{{
+FIELDS: GID surname firstname middlenames alt_surnames suffix nickname comment
+}}}
+
+Notice that there is no pid. This is because the party id may changed.
+Notice also that there is no field for any external global id, but of course the comment field could include references to such ids.s are not included only the global id of the legislator in question.
+
+===rollcalls.table===
+This table cconsolidates nomrecord.txt and pty_nol.txt files.
+{{{
+FIELDS: ST yyyy C SES GID:pid did vv
+}}}
+
+This file could be implemented as a .txt file because did has no spaces, but note that both did and vv are of variable lengths, so a fixed-width implementation would be impractical as there are district ids such as:
+* Berkshire-Hampden-Hampshire-Franklin
+
+===rosetta.table===
+{{{
+FIELDS: GID FTM Klarner OpenStates votesmart
+}}}
+
+Here:
+* FTM is the unique_candidate_id defined by followthemoney.org (aka CSMSP - Center for the Study of Money in State Politics).
+
+* Klarner is the id defined by http://www.indstate.edu/polisci/klarnerpolitics.htm
+
+* OpenStates is the OpenStates leg_id (http://openstates.org/api/legislators)
+
+* votesmart is candidateId used in the URL http://votesmart.org/candidate/biography/#{candidateId} or http://api.votesmart.org/CandidateBio.getBio?key=<your_key>&candidateId=#{candidateId} (see http://api.votesmart.org/docs/Candidates.html)
+
+This table is intended to record the correspondence between GID and "global ids" defined by other authorities.  If an external authority defines more than one id for an individual, then such ids should not be recorded in this table.  The aliases.table format can be used to record the full set of ids defined by an external authority.)
+
+===aliases.table===
+{{{
+FIELDS: GID alias
+}}}
+
+Here, "alias" may contain spaces.
+
+This table defines a many-to-one mapping from aliases to GIDs, e.g.:
+
+  GID ST yyyy C SES lid
+
+The only requirement is that each "alias" will appear only once in the table.
+
+"aliases.table" is a kind of "Rosetta Stone".
+
+===Notes===
+
+1. records in a .tsv file need not have trailing tabs.
+2. By convention, DISTRICTID (did) values have no spaces.
+3. The chamber code for Nebraska is U (i.e. the value of C for NE is U).
+
