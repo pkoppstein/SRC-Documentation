@@ -2,11 +2,11 @@
 
 This page defines a simple relational model for SRC data in terms of just three global tables:
 
-1. legislators.table - a table for legislators
-2. rollcalls.table - a table for their votes 
-3. rosetta.table - a "Rosetta Stone" for recording a one-to-one mapping between SRC Global IDs and similar "global ids" defined by other authorities.
+# legislators.table - a table for legislators
+# rollcalls.table - a table for their votes 
+# rosetta.table - a "Rosetta Stone" for recording a one-to-one mapping between SRC Global IDs and similar "global ids" defined by other authorities.
 
-Additional tables containing data useful for project management may also be useful. One such table is defined here: a table for mapping aliases of a legislator to the SRC Global IDs.
+Additional tables containing data useful for project management may also be useful. One such table is defined below: aliases.table maps aliases of a legislator to his or her SRC Global ID.
 
 Each relational table can be implemented or represented in a number of ways, e.g. using one or more files. If more than one file is used for any one table, however, it should be possible to derive the full table simply by concatenating the corresponding files.
 
@@ -109,7 +109,7 @@ The only requirement is that each "alias" will appear only once in the table.
 
 ===Notes===
 
-1. records in a .tsv file need not have trailing tabs.
-2. By convention, DISTRICTID (did) values have no spaces.
-3. The chamber code for Nebraska is U (i.e. the value of C for NE is U).
+# records in a .tsv file need not have trailing tabs.
+# By convention, DISTRICTID (did) values have no spaces.
+# The chamber code for Nebraska is U (i.e. the value of C for NE is U).
 
