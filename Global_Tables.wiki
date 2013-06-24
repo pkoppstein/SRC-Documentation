@@ -58,19 +58,19 @@ In the following descriptions, the field names are shown separated by spaces.
 For reasons of simplicity, the .tsv format is preferred for implementations of any of the tables as files.
 
 ===legislators.table===
-This table is logically derived from legislator.tsv files.
+This table is logically derived from legislator.tsv files.  Every pair of entries should be distinguishable without reference to the GID field.
 
 {{{
-FIELDS: GID surname firstname middlenames alt_surnames suffix nickname comment
+FIELDS: *GID *surname firstname middlenames alt_surnames suffix nickname birthyear gender comment
 }}}
 
 Notice that there is no pid. This is because a legislator's party id may change.
 Notice also that there is no field for any external global id, but of course the comment field could include references to such ids.
 
 ===rollcalls.table===
-This table cconsolidates nomrecord.txt and pty_nol.txt files.
+This table consolidates the information in nomrecord.txt and pty_nol.txt files.
 {{{
-FIELDS: ST yyyy C SES GID:pid did vv
+FIELDS: *ST *yyyy *C *SES *GID:*pid *did *vv
 }}}
 
 This file could be implemented as a .txt file because did has no spaces, but note that both did and vv are of variable lengths, so a fixed-width implementation would be impractical as there are district ids such as
@@ -78,38 +78,38 @@ This file could be implemented as a .txt file because did has no spaces, but not
 
 ===rosetta.table===
 {{{
-FIELDS: GID FTM Klarner OpenStates votesmart
+FIELDS: *GID FTM Klarner OpenStates votesmart
 }}}
 
 Here:
-* FTM is the unique_candidate_id defined by followthemoney.org (aka CSMSP - Center for the Study of Money in State Politics).
+* FTM is the //unique_candidate_id// defined by followthemoney.org (aka CSMSP - Center for the Study of Money in State Politics).
 
 * Klarner is the id defined by [[http://www.indstate.edu/polisci/klarnerpolitics.htm|http://www.indstate.edu/polisci/klarnerpolitics.htm]]
 
-* OpenStates is the OpenStates leg_id ([[http://openstates.org/api/legislators|http://openstates.org/api/legislators]])
+* OpenStates is the OpenStates //leg_id// ([[http://openstates.org/api/legislators|http://openstates.org/api/legislators]])
 
-* votesmart is candidateId used in the URL http://votesmart.org/candidate/biography/#{candidateId} or http://api.votesmart.org/CandidateBio.getBio?key=<your_key>&candidateId=#{candidateId} (see [[http://api.votesmart.org/docs/Candidates.html|http://api.votesmart.org/docs/Candidates.html]])
+* votesmart is //candidateId// used in the URL {{{http://votesmart.org/candidate/biography/#{candidateId} }}}
+or {{{http://api.votesmart.org/CandidateBio.getBio?key=<your_key>&candidateId=#{candidateId} }}} (see [[http://api.votesmart.org/docs/Candidates.html|http://api.votesmart.org/docs/Candidates.html]])
 
 This table is intended to record the correspondence between GID and "global ids" defined by other authorities.  If an external authority defines more than one id for an individual, then such ids should not be recorded in this table.  The aliases.table format can be used to record the full set of ids defined by an external authority.)
 
 ===aliases.table===
+"aliases.table" is a kind of "Rosetta Stone" for recording globally unique "aliases":
+
 {{{
-FIELDS: GID alias
+FIELDS: *GID *alias
 }}}
 
-Here, the values of "alias" may contain spaces.
+Here, the values of "alias" may contain spaces and will typically include an authority as the "alias" must be globally unique.
 
 This table defines a many-to-one mapping from aliases to GIDs, e.g.:
 
   GID ST yyyy C SES lid
 
-The only requirement is that each "alias" will appear only once in the table.
-
-"aliases.table" is a kind of "Rosetta Stone".
+Alternative names for a legislator can be specified in legislators.table.
 
 ===Notes===
 
 # records in a .tsv file need not have trailing tabs.
 # By convention, DISTRICTID (did) values have no spaces.
 # The chamber code for Nebraska is U (i.e. the value of C for NE is U).
-
