@@ -73,8 +73,7 @@ This table consolidates the information in nomrecord.txt and pty_nol.txt files.
 FIELDS: *ST *yyyy *C *SES *GID:*pid *did *vv
 }}}
 
-This file could be implemented as a .txt file because did has no spaces, but note that both did and vv are of variable lengths, so a fixed-width implementation would be impractical as there are district ids such as
-"Berkshire-Hampden-Hampshire-Franklin"
+This table could be implemented as a .txt file because //did// has no spaces, but note that both //did// and //vv// are of variable lengths, so a fixed-width implementation would be impractical as there are district ids such as "Berkshire-Hampden-Hampshire-Franklin".
 
 ===rosetta.table===
 {{{
@@ -91,7 +90,7 @@ Here:
 * votesmart is //candidateId// used in the URL {{{http://votesmart.org/candidate/biography/#{candidateId} }}}
 or {{{http://api.votesmart.org/CandidateBio.getBio?key=<your_key>&candidateId=#{candidateId} }}} (see [[http://api.votesmart.org/docs/Candidates.html|http://api.votesmart.org/docs/Candidates.html]])
 
-This table is intended to record the correspondence between GID and "global ids" defined by other authorities.  If an external authority defines more than one id for an individual, then such ids should not be recorded in this table.  The aliases.table format can be used to record the full set of ids defined by an external authority.)
+This table is intended to record the correspondence between GID and "global ids" defined by other authorities.  If an external authority defines more than one id for an individual, then such ids should not be recorded in this table.  The //aliases.table// format can be used to record the full set of ids defined by an external authority.)
 
 ===aliases.table===
 "aliases.table" is a kind of "Rosetta Stone" for recording globally unique "aliases":
