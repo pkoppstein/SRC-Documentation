@@ -27,6 +27,7 @@ In addition:
 * pid = party id (three digits)
 * did = district id (a string without spaces)
 * vv = voting vector (as in nomrecord.txt)
+* SES = session indicator (e.g. "reg" for "regular", "ss" for "special session")
 
 Required fields are marked with an asterisk (*).
 
