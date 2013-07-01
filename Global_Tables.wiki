@@ -36,13 +36,15 @@ GID = STyyyyCnnn
 
 where:
 
+ST is the standard uppercase two-letter abbreviation for the State
+
 yyyy is a year (generally the first year in which we have a voting vector, ignoring any legislative days in Nov and Dec)
 
 C is U or L (upper or lower house)
 
-nnn is the corresponding lid
+nnn is the corresponding three-digit lid
 
-The GID selected for an individual must correspond with an existing lid in the SRC collection of data.
+The GID selected for an individual must correspond to an existing lid in the SRC collection of data.
 
 
 ===Current per-session format===
