@@ -61,7 +61,7 @@ AYE: absent
 NAY: present
 : Samuels
 
-result: Passed
+Result: Passed
 }}}
 
 ==Defined Tags==
