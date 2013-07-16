@@ -71,6 +71,7 @@ Result: Passed
 ABSENT: count      # as given
 AYES: count        # as given
 CHAMBER:           # H | A | S | U | L
+EXCUSED: count     # as given
 FILE: filename     # file being read
 GIVEN DATE: text   # as given
 Generated: YYYYMMDD  # date the program was run
@@ -96,6 +97,7 @@ description: text  # text or URL associated with vote (*)
 question: text     # parsed from proceedings (*)
 Event:             # a section header
 Add: D. Smith      # This implies that the previous Smith was not "D. Smith"
+Delete: J. Smith 
 }}}
 
 (*) For example, this HTML snippet from a Journal:
