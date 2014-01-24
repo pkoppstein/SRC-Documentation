@@ -17,6 +17,10 @@ Early drafts:
 * [[Global Tables]]
 * [[Disclaimers]]
 
+==Snapshot==
+
+* [[https://docs.zoho.com/file/udqvh0ef8d8d6c5de4aa1a5e4b5db429588cd|spreadsheet]]
+
 === Wiki features ===
 
 This wiki uses the [[http://www.wikicreole.org/|Creole]] syntax, and is fully compatible with the 1.0 specification.
