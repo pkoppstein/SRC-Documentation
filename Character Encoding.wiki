@@ -8,8 +8,7 @@ The [[http://en.wikipedia.org/wiki/Windows-1252|Windows-1252]] codepage coincide
 For further details, see for example [[http://en.wikipedia.org/wiki/ISO/IEC_8859-1|ISO/IEC_8859-1]].
 
 ==Apostrophes and Quotation Marks==
-ISO 8859-1 does not have “curved double quotes” or ‘curved single quotes’.  Accordingly, ordinary double quotes (") or apostrophes (') should be used instead, especially in the NAME field of pty_nol.txt and nomrecord.txt files.  Please do not use back-ticks (`) in names.
-
+ISO 8859-1 does not have “curved double quotes” or ‘curved single quotes’.  Accordingly, ordinary double quotes (") or apostrophes (') should be used instead, especially in the NAME field of pty_nol.txt and nomrecord.txt files.  Please do not use the accent character (´) as an apostrophe, and avoid back-ticks (`) in names.  For example, //Eugene “Gene” O’Neill// could be rendered as **O'Neill, Eugene "Gene"**.
  
 ==Checking and Conversion==
 On Linux or Mac, use the **file** command to check the encoding of one or more files. The **iconv** command can be used to perform conversions.
