@@ -3,7 +3,7 @@
 On each line, the defined three-digit code is shown, together with the intended interpretation and any short forms that may be allowed in the Corrections.csv format (see [[Format_for_Editing_Directives]]).
 
 {{{
-100 DEMOCRAT : D
+100 DEMOCRAT : D        # See (***) re MN
 150 INDEPENDENT_DEMOCRAT : ID
 200 REPUBLICAN : R
 250 INDEPENDENT_REPUBLICAN : IR
@@ -22,6 +22,8 @@ On each line, the defined three-digit code is shown, together with the intended 
 (*) "700" is a "catch-all" code for organizations that have not been assigned, and are not likely to be assigned, a three-digit code.
 
 (~*~*) r&d and d&r in NH should be coded as for REPUBLICAN and DEMOCRAT respectively.
+
+(~*~*~*) Includes Democratic-Farmer-Labor
 
 
 If an additional code is needed, consult VoteView (http://voteview.com/party3.htm).
