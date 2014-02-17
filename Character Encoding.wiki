@@ -9,7 +9,12 @@ The [[http://en.wikipedia.org/wiki/Windows-1252|Windows-1252]] codepage coincide
 ISO 8859-1 does not have “curved double quotes” or ‘curved single quotes’.  Accordingly, ordinary double quotes (") or apostrophes (') should be used instead, especially in the NAME field of pty_nol.txt and nomrecord.txt files.  Please do not use the accent character (´) as an apostrophe, and avoid back-ticks (`) in names.  For example, //Eugene “Gene” O’Neill// could be rendered as **O'Neill, Eugene "Gene"**.
  
 ==Checking and Conversion==
-On Linux or Mac, use the **file** command to check the encoding of one or more files. The **iconv** command can be used to perform conversions.
+On Linux or Mac, use the **file** command to check the encoding of one or more files. The **iconv** command can be used to perform conversions, e.g. to convert from utf-8 to ISO-8859-1:
+
+{{{
+iconv -c -f utf8 -t ISO-8859-1//TRANSLIT
+}}}
+
 ===Linux===
 {{{
 $ file -i pty_nol.txt
