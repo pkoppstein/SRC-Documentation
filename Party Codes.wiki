@@ -25,5 +25,11 @@ On each line, the defined three-digit code is shown, together with the intended 
 
 (~*~*~*) Includes Democratic-Farmer-Labor
 
-
 If an additional code is needed, consult VoteView (http://voteview.com/party3.htm).
+
+=== Vacancies ===
+If a seat is vacant during a session, the UNKNOWN value (999) should be used for the party code. The entry would therefore look like this:
+{{{
+nnn (Vacant)                    999 districtid
+}}}
+where "nnn" is a valid LOCALID and "districtid" is the district id.
