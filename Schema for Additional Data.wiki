@@ -32,14 +32,17 @@ data files, the header line is just one line.
 == File: nomrecord2.tsv ==
 
 ==== Header: ====
-STATE,CHAMBER,SESSION,CODES,YEAR1,NVOTES1,ISCHRONOLOGICAL1,YEAR2,NVOTES2,ISCHRONOLOGICAL2,COMMENT
+STATE,CHAMBER,SESSION,CODES,YEAR1,NVOTES1,ISCHRONOLOGICAL1,YEAR2,NVOTES2,ISCHRONOLOGICAL2,COMMENT,InverseEstimatedErrorRate
+
+InverseEstimatedErrorRate is computed as (total number of votes cast) / (estimated number of errors),
+where the "estimated number of errors" is the estimated number of times the encoding of the "actual vote" would differ from the encoding of the vote as recorded in nomrecord.txt. The estimate is often based simply on the number of 7s.  Please note also that the computed error rate typically includes unanimous roll calls, and does not take into account roll calls that may be on missing pages.
 
 ==== Examples: ====
 {{{TN,U,reg,169,2003,77,?,2003}}}
 
 {{{TN,U,reg,01234569,2003,77,?,2003}}}
 
-This file will contain just one data record.  All fields except the last four are required, but NVOTES2 and ISCHRONOLOGICAL2 must be provided if YEAR2 is specified and differs from YEAR1.
+This file will contain just one data record.  The first seven fields are required, but NVOTES2 and ISCHRONOLOGICAL2 must be provided if YEAR2 is specified and differs from YEAR1.
 
 * *STATE:   two-letter upper-case abbreviation (CONTROLLED)
 * *CHAMBER: L|U (L for lower house, U for upper house)
