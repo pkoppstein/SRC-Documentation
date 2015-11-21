@@ -100,7 +100,7 @@ A string of decimal digits reflecting the voting record of a single legislator:
 * 4 - announced nay
 * 5 - paired nay
 * 6 - nay
-* 7 - unresolved (conflicting evidence)
+* 7 - unresolved (e.g. conflicting evidence)
 * 9 - no vote recorded
 
 Within a single [[Terminology#!nomrecordtxt-file|nomrecord.txt]] file, the voting vectors should all be of the same length, and the results of a particular rollcall should all be represented at the same position.  
@@ -108,3 +108,6 @@ Within a single [[Terminology#!nomrecordtxt-file|nomrecord.txt]] file, the votin
 If an acting representative has been appointed, his or her vote should be recorded under his or her name, and a "9" should be used for the House or Senate member who is on leave.
 
 Usually, the voting vector is in chronological order, but that is currently not a requirement.  Details about this should be recorded in [[Schema%20for%20Additional%20Data#!file-nomrecord2tsv|nomrecord2.tsv]].
+
+===Retrospective Votes===
+Normally, retrospective statements about how a legislator would have voted are ignored, but as of November 2015, an exception has been made if such statements are clearly recorded in the Journal as resulting from a "mechanical malfunction" of the system for recording votes.
