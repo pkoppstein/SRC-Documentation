@@ -1,5 +1,7 @@
 ==Three-digit Codes==
 
+A table of three-digit codes for political parties is in the file data/party.tsv.  It contains the three-digit code and party name as shown in the table below, except that the party name for 700 is given as OTHER. 
+
 On each line, the defined three-digit code is shown, together with the intended interpretation and any short forms that may be allowed in the Corrections.csv format (see [[Format_for_Editing_Directives]]).
 
 {{{
