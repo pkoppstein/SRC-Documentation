@@ -13,6 +13,7 @@ On each line, the defined three-digit code is shown, together with the intended 
 400 GREEN : G
 500 PROGRESSIVE
 600 REFORM
+610 INDEPENDENCE PARTY : IP # [*IP]
 700 (*)
 800 CONSTITUTION
 900 LIBERTARIAN
@@ -21,11 +22,13 @@ On each line, the defined three-digit code is shown, together with the intended 
 999 UNKNOWN
 }}}
 
-(*) "700" is a "catch-all" code for organizations that have not been assigned, and are not likely to be assigned, a three-digit code.
+(~*) "700" is a "catch-all" code for organizations that have not been assigned, and are not likely to be assigned, a three-digit code.
 
 (~*~*) r&d and d&r in NH should be coded as for REPUBLICAN and DEMOCRAT respectively.
 
 (~*~*~*) Includes Democratic-Farmer-Labor
+
+[~*IP] Independence Party of NY, Independence Party of MN, and other parties historically affiliated with the Independence Party of America, founded in 2007 [https://en.wikipedia.org/wiki/Independence_Party_of_America].
 
 If an additional code is needed, consult VoteView (http://voteview.com/party3.htm).
 
