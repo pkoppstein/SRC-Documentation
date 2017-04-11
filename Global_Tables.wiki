@@ -122,7 +122,6 @@ The file globalids2Klarner.tsv in the data/ directory is currently the definitiv
 ak1995l001r	AK	1995	9		004	AK1995L001	Robinson		D	K001803
 ak1995l002r	AK	1995	9		019	AK1995L002	Sanders		R	K000338
 ak1995l003r	AK	1995	9		H	AK1995L003	Ellis		D	K000010
-	100
 }}}
 
 Here CH represents the chamber, 
