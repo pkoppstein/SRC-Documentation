@@ -110,6 +110,24 @@ This table defines a many-to-one mapping from aliases to GIDs, e.g.:
 
 Alternative names for a legislator can be specified in legislators.table.
 
+== data/globalids2Klarner.tsv ==
+
+The file globalids2Klarner.tsv in the data/ directory is currently the definitive reference file for SRC global ids.  The format of the file is similar to the "reduced Klarner format" -- basically, a selection of relevant columns from the SLERs schema. Here is the header followed by a sample of three entries:
+
+
+#	ST	YR	CH	DNAME	DID	uid	NAME	DetailedPID	SimplifiedPID	comment
+ga1956l001	GA	1956	9		Appling	GA1956L001	Parker, William Clarence		100
+ga1956l002	GA	1956	9		Atkinson	GA1956L002	Henderson, Waldo		100
+ga1956l003	GA	1956	9		Bacon	GA1956L003	Deen Jr, Braswell D		100
+
+Here CH represents the chamber, DNAME the district name, DID the district id, 
+uid the SRC global id.
+and PID the party id.  The last field (labeled "comment" above) holds a canonical reference globalid: if the entry has the form Knnnnnn it is either a standard or a special Klarner id.
+
+There are a few discrepancies with the SLERs schema, the main ones being:
+* YR refers to the session year rather than the election year;
+* the first column in SLERs is a "case id" whereas the first column above is obtained by lowercasing the concatenation of ST-YR-CH and the SRC localid, possibly with a postfix if a session has more than one folder (e.g. reg/ and ss/). The postfix if present is "r" for "reg", "s" for "ss", "s1" for "ss1", "s2" for "ss2", or "so" for "org" (organizational).
+
 ===Notes===
 
 # records in a .tsv file need not have trailing tabs.
