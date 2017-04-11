@@ -115,14 +115,21 @@ Alternative names for a legislator can be specified in legislators.table.
 The file globalids2Klarner.tsv in the data/ directory is currently the definitive reference file for SRC global ids.  The format of the file is similar to the "reduced Klarner format" -- basically, a selection of relevant columns from the SLERs schema. Here is the header followed by a sample of three entries:
 
 
-#	ST	YR	CH	DNAME	DID	uid	NAME	DetailedPID	SimplifiedPID	comment
-ga1956l001	GA	1956	9		Appling	GA1956L001	Parker, William Clarence		100
-ga1956l002	GA	1956	9		Atkinson	GA1956L002	Henderson, Waldo		100
-ga1956l003	GA	1956	9		Bacon	GA1956L003	Deen Jr, Braswell D		100
+{{{
+#!python
 
-Here CH represents the chamber, DNAME the district name, DID the district id, 
-uid the SRC global id.
-and PID the party id.  The last field (labeled "comment" above) holds a canonical reference globalid: if the entry has the form Knnnnnn it is either a standard or a special Klarner id.
+#	ST	YR	CH	DNAME	DID	uid	NAME	DetailedPID	SimplifiedPID	comment
+ak1995l001r	AK	1995	9		004	AK1995L001	Robinson		D	K001803
+ak1995l002r	AK	1995	9		019	AK1995L002	Sanders		R	K000338
+ak1995l003r	AK	1995	9		H	AK1995L003	Ellis		D	K000010
+	100
+}}}
+
+Here CH represents the chamber, 
+DNAME the district name, 
+DID the district id, 
+uid the SRC global id,
+and PID the party id.  The last field (labeled "comment" above) holds a canonical reference global id: if the entry has the form Knnnnnn it is either a standard or a special Klarner id.
 
 There are a few discrepancies with the SLERs schema, the main ones being:
 * YR refers to the session year rather than the election year;
