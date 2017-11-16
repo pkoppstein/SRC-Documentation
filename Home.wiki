@@ -2,7 +2,10 @@
 
 Welcome to the "states50" State Rollcall Project.  This webpage is under construction.
 
-== Documentation ==
+The SRC repository includes data, scripts, and some documentation.  For notes on accessing these, see:
+* [[Accessing%20the%20Contents%20of%20the%20SRC%20Repository|Accessing the Contents of the SRC Repository]]
+
+== Online Documentation ==
 * [[Terminology]]
 * [[District%20Identifiers|District Identifiers]]
 * [[Party%20Codes|Party Codes]]
