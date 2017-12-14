@@ -11,6 +11,7 @@ The SRC repository includes data, scripts, and some documentation.  For notes on
 * [[Party%20Codes|Party Codes]]
 * [[Schema%20for%20Additional%20Data|Schema for Additional Data]]
 * [[Terminology#!voting-vector|Voting Codes]]
+* [[Prefixes%20to%20distinguish%20global%20identifiers|Prefixes to distinguish global identifiers]]
 
 Early drafts:
 * [[Sequential Tag-Value Format]]
