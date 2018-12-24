@@ -78,7 +78,11 @@ This file will contain just one data record.  The first seven fields are require
 ==== Header: ====
 LOCALID,SURNAME,FIRSTNAME,MIDDLENAMES,ALTERNATIVESURNAMES,SUFFIX,NICKNAME,
 VARIANTS,BIRTHYEAR,GENDER,GLOBALID,
-Votesmart,OpenStates,CSMSP,Klarner,Bonica,COMMENT
+Votesmart,OpenStates,eid|CSMSP,Klarner,Bonica,COMMENT
+
+Column 14 (the eid or CSMSP column) records one of the followthemoney.org ids. The complication here is that CSMSP (aka ftm) abandoned the "uc" ids in favor of "eid" ids, and accordingly the CSMSP header is being phased out.
+
+If the column is headed "CSMSP", then unprefixed numeric values record the "uc" id, and if the prefix "eid:" is used, the value records the eid value.  If the column header is "eid", then unprefixed numbers record the eid value.
 
 **In each edition of the StateRollCall data, the combination of descriptive fields of a legislator should be unique.**
 
