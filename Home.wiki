@@ -25,6 +25,11 @@ Early drafts:
 
 * [[https://docs.zoho.com/file/udqvh0ef8d8d6c5de4aa1a5e4b5db429588cd|spreadsheet]]
 
+=== Links to Primary Sources===
+
+For legislators, by state:
+* [[https://docs.google.com/spreadsheets/d/1lYdgWilxn035Y3rSp1aeGY9NWXpM1j6W71tWv93NXuM/edit?usp=sharing]]
+
 === Wiki features ===
 
 This wiki uses the [[http://www.wikicreole.org/|Creole]] syntax, and is fully compatible with the 1.0 specification.
