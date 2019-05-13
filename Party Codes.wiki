@@ -26,6 +26,15 @@ On each line, the defined three-digit code is shown, together with the intended 
 
 (~*~*) r&d and d&r in NH should be coded as for REPUBLICAN and DEMOCRAT respectively.
 
+Rationale:
+
+   "The first letter denotes the candidate's actual party affiliation,
+   so r&d indicates a candidate ran as a Republican.  The 2nd letter
+   indicates that they received enough write-in votes to win
+   nomination from the other party."
+   -- email from Charles Shipman,
+      Reference Dept., New Hampshire State Library, Jan 8, 2013
+
 (~*~*~*) Includes Democratic-Farmer-Labor
 
 [~*IP] Independence Party of NY, Independence Party of MN, and other parties historically affiliated with the Independence Party of America, founded in 2007 [https://en.wikipedia.org/wiki/Independence_Party_of_America].
