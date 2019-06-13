@@ -10,9 +10,14 @@ As context requires, the following colon-prefixes are used, with preference gene
     eid:  # the followthemoney.org "eid" id
     os:   # OpenStates
     ls:   # LegiScan people_id
-    vs:   # VoteSmart
+    vs:   # https://votesmart.org/candidate/
     oc:   # https://www.ourcampaigns.com/CandidateDetail.html?CandidateID=
     tx:   # https://www.lrl.texas.gov/legeLeaders/members/memberDisplay.cfm?memberID=
     src:  # SRC (this project)
  
 Note: Prior to 20 December 2018, the prefix uc: was sometimes used for the predecessor of the ftm "eid" id.
+
+### Other Prefixes ###
+These are not currently used:
+
+    sd:   # http://sdlegislature.gov/Legislators/Historical_Listing/LegislatorDetail.aspx?MemberID=
